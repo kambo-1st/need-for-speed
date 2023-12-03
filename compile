@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Function to build and install PHP Extension
+build_php_extension() {
+    echo "Building PHP Extension..."
+    cd cosine_similarity_c_extension
+    make clean
+    phpize
+    ./configure
+    make
+    make test
+    sudo cp modules/cosine_similarity_c.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/
+}
+
+# Function to build FFI Library
+build_ffi_library() {
+    echo "Building FFI Library..."
+    cd cosine_similarity_c_lib
+    make clean
+    make
+}
+
+# Function to build Rust Extension
+build_rust_extension() {
+    echo "Building Rust Extension..."
+    cd cosine-similarity-rust
+    cargo build --release
+    sudo cp target/release/libcosine_similarity.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/
+}
+
+# Checking if we're inside a Docker container
+if grep -q docker /proc/1/cgroup; then
+    build_php_extension
+    cd ..
+    build_ffi_library
+    cd ..
+    build_rust_extension
+else
+    echo "This script is intended to be run inside a Docker container."
+fi

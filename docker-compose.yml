@@ -1,0 +1,8 @@
+version: '2'
+services:
+  cli:
+    #image: php:8.3.0RC6-cli-bookworm
+    build:
+      dockerfile: Docker/Dockerfile
+    volumes:
+      - .:/home/dev/Benchmark

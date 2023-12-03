@@ -1,0 +1,7 @@
+ARG_ENABLE('cosine_similarity_c', 'cosine_similarity_c support', 'no');
+
+if (PHP_COSINE_SIMILARITY_C != 'no') {
+	AC_DEFINE('HAVE_COSINE_SIMILARITY_C', 1, 'cosine_similarity_c support enabled');
+
+	EXTENSION('cosine_similarity_c', 'cosine_similarity_c.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
