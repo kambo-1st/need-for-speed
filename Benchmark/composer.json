@@ -1,10 +1,16 @@
 {
     "require-dev": {
-        "phpbench/phpbench": "^1.2"
+        "phpbench/phpbench": "^1.2",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
             "Kambo\\Benchmark\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kambo\\Benchmark\\Tests\\": "tests"
         }
     }
 }

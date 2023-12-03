@@ -21,7 +21,7 @@ class FFICallBench
      */
     public function benchSmallSize()
     {
-        cosine_similarity([1,2,3,4,5], [3,4,5,6,7]);
+        cosine_similarity_ffi([1,2,3,4,5], [3,4,5,6,7]);
     }
 
     /**
@@ -29,7 +29,7 @@ class FFICallBench
      */
     public function benchMiddleSize()
     {
-        cosine_similarity(
+        cosine_similarity_ffi(
             [
                 15726,
                 38758,
@@ -72,7 +72,7 @@ class FFICallBench
      */
     public function benchBigSize()
     {
-        cosine_similarity(
+        cosine_similarity_ffi(
             [
                 3531,
                 10535,

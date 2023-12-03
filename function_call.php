@@ -34,29 +34,6 @@ function cosine_similarity($array1, $array2) {
     return $dot_product / (sqrt($magnitude_a) * sqrt($magnitude_b));
 }
 
-/*function cosine_similarity_unroll($array1, $array2) {
-    $dot_product = 0.0;
-    $magnitude_a = 0.0;
-    $magnitude_b = 0.0;
-
-    $size = count($array1);
-    $i = 0;
-
-    for (; $i < $size - 1; $i += 2) {
-        $dot_product += $array1[$i] * $array2[$i] + $array1[$i + 1] * $array2[$i + 1];
-        $magnitude_a += $array1[$i] * $array1[$i] + $array1[$i + 1] * $array1[$i + 1];
-        $magnitude_b += $array2[$i] * $array2[$i] + $array2[$i + 1] * $array2[$i + 1];
-    }
-
-    if ($i < $size) {
-        $dot_product += $array1[$i] * $array2[$i];
-        $magnitude_a += $array1[$i] * $array1[$i];
-        $magnitude_b += $array2[$i] * $array2[$i];
-    }
-
-    return $dot_product / (sqrt($magnitude_a) * sqrt($magnitude_b));
-}*/
-
 function cosine_similarity_unroll($array1, $array2) {
     $dot_product = 0.0;
     $magnitude_a = 0.0;

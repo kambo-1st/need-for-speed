@@ -2,7 +2,7 @@ use ext_php_rs::prelude::*;
 use ext_php_rs::types::Zval;
 
 #[php_function]
-pub fn cosine_similarity(array1: Vec<f64>, array2: Vec<f64>) -> Result<Zval, String> {
+pub fn cosine_similarity_rust(array1: Vec<f64>, array2: Vec<f64>) -> Result<Zval, String> {
     let mut dot_product = 0.0;
     let mut magnitude_a = 0.0;
     let mut magnitude_b = 0.0;

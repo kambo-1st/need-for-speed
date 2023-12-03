@@ -27,7 +27,7 @@ class FFIPreparedCallBench
      */
     public function benchSmallSize()
     {
-        cosine_similarity_prepared($this->ffi, [1,2,3,4,5], [3,4,5,6,7]);
+        cosine_similarity_prepared_ffi($this->ffi, [1,2,3,4,5], [3,4,5,6,7]);
     }
 
     /**
@@ -35,7 +35,7 @@ class FFIPreparedCallBench
      */
     public function benchMiddleSize()
     {
-        cosine_similarity_prepared(
+        cosine_similarity_prepared_ffi(
             $this->ffi,
             [
                 15726,
@@ -79,7 +79,7 @@ class FFIPreparedCallBench
      */
     public function benchBigSize()
     {
-        cosine_similarity_prepared(
+        cosine_similarity_prepared_ffi(
             $this->ffi,
             [
                 3531,

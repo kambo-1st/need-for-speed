@@ -131,7 +131,7 @@ static double cosine_similarity_impl_sse(const double *array1, const double *arr
     return final_dot / (sqrt(final_mag_a) * sqrt(final_mag_b));
 }
 
-PHP_FUNCTION(cosine_similarity) {
+PHP_FUNCTION(cosine_similarity_c) {
     zval *array1, *array2;
     double *arr1, *arr2;
     int size1, size2, i;

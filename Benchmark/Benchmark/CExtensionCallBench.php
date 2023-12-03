@@ -31,7 +31,7 @@ class CExtensionCallBench
      */
     public function benchSmallSize()
     {
-        cosine_similarity([1,2,3,4,5], [3,4,5,6,7]);
+        cosine_similarity_c([1,2,3,4,5], [3,4,5,6,7]);
     }
 
     /**
@@ -39,7 +39,7 @@ class CExtensionCallBench
      */
     public function benchMiddleSize()
     {
-        cosine_similarity(
+        cosine_similarity_c(
             [
                 15726,
                 38758,
@@ -82,7 +82,7 @@ class CExtensionCallBench
      */
     public function benchBigSize()
     {
-        cosine_similarity(
+        cosine_similarity_c(
             [
                3531,
                10535,

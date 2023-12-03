@@ -32,7 +32,7 @@ class RustExtensionCallBench
      */
     public function benchSmallSize()
     {
-        cosine_similarity([1,2,3,4,5], [3,4,5,6,7]);
+        cosine_similarity_rust([1,2,3,4,5], [3,4,5,6,7]);
     }
 
     /**
@@ -40,7 +40,7 @@ class RustExtensionCallBench
      */
     public function benchMiddleSize()
     {
-        cosine_similarity(
+        cosine_similarity_rust(
             [
                 15726,
                 38758,
@@ -83,7 +83,7 @@ class RustExtensionCallBench
      */
     public function benchBigSize()
     {
-        cosine_similarity(
+        cosine_similarity_rust(
             [
                 3531,
                 10535,

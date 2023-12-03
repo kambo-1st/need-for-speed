@@ -5,4 +5,4 @@
  * @undocumentable
  */
 
-function cosine_similarity(array $a, array $b) : float {}
+function cosine_similarity_c(array $a, array $b) : float {}
