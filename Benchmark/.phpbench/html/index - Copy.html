@@ -1,0 +1,3210 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PHPBench Report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body class="container">
+                <h1>PHPBench Report</h1>
+        <hr/>
+                    <div>
+            <h2>DuckDB connectors comparison</h2>
+                <p>Compares different implementations of the DuckDB connectors</p>
+                            <div id="phpbench-component-4" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Basic Usage"],
+        name: 'FFIPreparedCallBench',
+        y: [1.4094324853228934],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'ClassCallBench',
+        y: [1.4216046966731906],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'FunctionUnrollCallBench',
+        y: [0.3552054794520548],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'CExtensionCallBench',
+        y: [0.30727984344422715],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'RustExtensionCallBench',
+        y: [0.5472602739726028],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'FunctionCallBench',
+        y: [0.4428375733855186],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'CExtensionSSECallBench',
+        y: [0.2795890410958904],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'FFICallBench',
+        y: [19.42610567514671],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,1.9426105675146712,3.8852211350293424,5.827831702544014,7.770442270058685,9.713052837573356,11.655663405088028,13.598273972602698,15.54088454011737,17.48349510763204,19.42610567514671],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.943<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","3.885<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","5.828<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","7.770<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","9.713<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.656<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.598<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.541<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.483<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.426<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Basic Usage"],
+        ticktext: ["Basic Usage"],
+    }
+};
+Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
+</script>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-7" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-7-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-0" 
+                        aria-controls="#tab-content-phpbench-component-7-0" 
+                        aria-current="page" 
+                        >
+                        FFIPreparedCallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-1" 
+                        aria-controls="#tab-content-phpbench-component-7-1" 
+                        aria-current="page" 
+                        >
+                        ClassCallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-2" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-2" 
+                        aria-controls="#tab-content-phpbench-component-7-2" 
+                        aria-current="page" 
+                        >
+                        FunctionUnrollCallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-3" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-3" 
+                        aria-controls="#tab-content-phpbench-component-7-3" 
+                        aria-current="page" 
+                        >
+                        CExtensionCallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-4" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-4" 
+                        aria-controls="#tab-content-phpbench-component-7-4" 
+                        aria-current="page" 
+                        >
+                        RustExtensionCallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-5" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-5" 
+                        aria-controls="#tab-content-phpbench-component-7-5" 
+                        aria-current="page" 
+                        >
+                        FunctionCallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-6" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-6" 
+                        aria-controls="#tab-content-phpbench-component-7-6" 
+                        aria-current="page" 
+                        >
+                        CExtensionSSECallBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-7-7" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-7-7" 
+                        aria-controls="#tab-content-phpbench-component-7-7" 
+                        aria-current="page" 
+                        >
+                        FFICallBench                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-7-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>FFIPreparedCallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.870<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>8.320<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.409<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #7f0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+50.96%</span>
+
+</td>
+            <td>0.946<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-1"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>ClassCallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.080<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>11.990<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.422<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #930000">
+    <span style="color: #555; font-weight: bold;">±</span>
+58.64%</span>
+
+</td>
+            <td>1.670<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-2" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-2"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>FunctionUnrollCallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.300<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>2.470<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.355<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #a00000">
+    <span style="color: #555; font-weight: bold;">±</span>
+63.05%</span>
+
+</td>
+            <td>0.615<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-3" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-3"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>CExtensionCallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.860<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.307<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #9e0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+62.23%</span>
+
+</td>
+            <td>0.283<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-4" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-4"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>RustExtensionCallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.370<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>6.840<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.547<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #b70000">
+    <span style="color: #555; font-weight: bold;">±</span>
+72.71%</span>
+
+</td>
+            <td>0.690<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-5" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-5"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>FunctionCallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.290<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>8.100<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.443<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #bc0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+74.36%</span>
+
+</td>
+            <td>0.781<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-6" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-6"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>CExtensionSSECallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>6.170<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.280<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+112.02%</span>
+
+</td>
+            <td>0.578<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-7-7" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-7-7"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>FFICallBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>17.340<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>43.340<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>19.426<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.33%</span>
+
+</td>
+            <td>4.701<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+    <div>
+                                <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-light">
+        <tr>
+                </tr>
+        <tr>
+                            <th>benchmark</th>
+                            <th>subject</th>
+                            <th>set</th>
+                            <th>revs</th>
+                            <th>its</th>
+                            <th>mem_peak</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>FFIPreparedCallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.89865<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #660000">
+    <span style="color: #555; font-weight: bold;">±</span>
+40.51%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FFIPreparedCallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.54217<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #1e0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+12.65%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FFIPreparedCallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>2.82845<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.07%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>ClassCallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.10295<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #230000">
+    <span style="color: #555; font-weight: bold;">±</span>
+14.31%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>ClassCallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>2.29489<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #440000">
+    <span style="color: #555; font-weight: bold;">±</span>
+27.72%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>ClassCallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>4.54382<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #330000">
+    <span style="color: #555; font-weight: bold;">±</span>
+20.05%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionUnrollCallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.31534<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #910000">
+    <span style="color: #555; font-weight: bold;">±</span>
+57.80%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionUnrollCallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.78055<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #160000">
+    <span style="color: #555; font-weight: bold;">±</span>
+9.60%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionUnrollCallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.73427<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #110000">
+    <span style="color: #555; font-weight: bold;">±</span>
+7.02%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionCallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.16098<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #300000">
+    <span style="color: #555; font-weight: bold;">±</span>
+19.72%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionCallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.36043<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.46%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionCallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.74004<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.71%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>RustExtensionCallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.38243<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #510000">
+    <span style="color: #555; font-weight: bold;">±</span>
+32.40%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>RustExtensionCallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.73679<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.02%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>RustExtensionCallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.46387<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #750000">
+    <span style="color: #555; font-weight: bold;">±</span>
+46.16%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionCallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.30613<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #560000">
+    <span style="color: #555; font-weight: bold;">±</span>
+34.24%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionCallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.82849<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #1c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+11.59%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionCallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.87720<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #510000">
+    <span style="color: #555; font-weight: bold;">±</span>
+32.69%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionSSECallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.17356<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+257.20%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionSSECallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.38264<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+123.98%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionSSECallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.74867<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #660000">
+    <span style="color: #555; font-weight: bold;">±</span>
+40.87%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FFICallBench</td>
+            <td>benchSmallSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>18.66290<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #3d0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+24.91%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FFICallBench</td>
+            <td>benchMiddleSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>19.38898<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #380000">
+    <span style="color: #555; font-weight: bold;">±</span>
+22.18%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>FFICallBench</td>
+            <td>benchBigSize</td>
+            <td></td>
+            <td>100</td>
+            <td>100</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>20.51534<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.02%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+            </div>
+    <div>
+                                <div>
+            <h2>FFIPreparedCallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-304" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-304-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-304-0" 
+                        aria-controls="#tab-content-phpbench-component-304-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-304-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-304-1" 
+                        aria-controls="#tab-content-phpbench-component-304-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-304-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-304-0"
+          >
+<br/>
+              <div id="phpbench-component-305" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [0.8986497064579256,1.5421722113502938,2.8284540117416843],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.3953302416967364,0.20419686579377264,0.6274143447515371],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.28284540117416845,0.5656908023483369,0.8485362035225054,1.1313816046966738,1.4142270058708424,1.6970724070450107,1.979917808219179,2.2627632093933476,2.545608610567516],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-305'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-304-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-304-1"
+          >
+<br/>
+              <div id="phpbench-component-306" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341904,1341904,1341904],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134190.4,268380.8,402571.19999999995,536761.6,670952,805142.3999999999,939332.7999999999,1073523.2,1207713.5999999999,1341904],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-306'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-311" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-311-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-311-0" 
+                        aria-controls="#tab-content-phpbench-component-311-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-311-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-311-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.899<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #660000">
+    <span style="color: #555; font-weight: bold;">±</span>
+40.51%</span>
+
+</td>
+            <td>0.395<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.542<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #1e0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+12.65%</span>
+
+</td>
+            <td>0.204<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>2.828<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.07%</span>
+
+</td>
+            <td>0.627<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>ClassCallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-334" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-334-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-334-0" 
+                        aria-controls="#tab-content-phpbench-component-334-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-334-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-334-1" 
+                        aria-controls="#tab-content-phpbench-component-334-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-334-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-334-0"
+          >
+<br/>
+              <div id="phpbench-component-335" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1.1029549902152647,2.2948923679060678,4.543816046966728],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.16942405378221828,0.6944976529837951,0.9733504199413477],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.45438160469667277,0.9087632093933455,1.3631448140900182,1.817526418786691,2.271908023483364,2.7262896281800364,3.1806712328767093,3.635052837573382,4.089434442270055,4.543816046966728],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","3.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","3.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-335'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-334-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-334-1"
+          >
+<br/>
+              <div id="phpbench-component-336" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341896,1341896,1341896],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134189.6,268379.2,402568.80000000005,536758.4,670948,805137.6000000001,939327.2000000001,1073516.8,1207706.4000000001,1341896],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","670.9<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-336'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-337" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-337-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-337-0" 
+                        aria-controls="#tab-content-phpbench-component-337-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-337-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-337-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.103<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #230000">
+    <span style="color: #555; font-weight: bold;">±</span>
+14.31%</span>
+
+</td>
+            <td>0.169<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>2.295<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #440000">
+    <span style="color: #555; font-weight: bold;">±</span>
+27.72%</span>
+
+</td>
+            <td>0.694<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>4.544<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #330000">
+    <span style="color: #555; font-weight: bold;">±</span>
+20.05%</span>
+
+</td>
+            <td>0.973<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>FunctionUnrollCallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-358" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-358-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-358-0" 
+                        aria-controls="#tab-content-phpbench-component-358-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-358-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-358-1" 
+                        aria-controls="#tab-content-phpbench-component-358-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-358-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-358-0"
+          >
+<br/>
+              <div id="phpbench-component-359" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [0.31534246575342467,0.7805479452054789,1.734266144814091],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.1962466560224658,0.07783212704275783,0.12490300236583579],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.1734266144814091,0.3468532289628182,0.5202798434442273,0.6937064579256365,0.8671330724070456,1.0405596868884546,1.2139863013698637,1.387412915851273,1.560839530332682],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-359'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-358-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-358-1"
+          >
+<br/>
+              <div id="phpbench-component-360" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341912,1341912,1341912],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134191.2,268382.4,402573.60000000003,536764.8,670956,805147.2000000001,939338.4000000001,1073529.6,1207720.8,1341912],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-360'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-361" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-361-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-361-0" 
+                        aria-controls="#tab-content-phpbench-component-361-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-361-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-361-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.315<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #910000">
+    <span style="color: #555; font-weight: bold;">±</span>
+57.80%</span>
+
+</td>
+            <td>0.196<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.781<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #160000">
+    <span style="color: #555; font-weight: bold;">±</span>
+9.60%</span>
+
+</td>
+            <td>0.078<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.734<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #110000">
+    <span style="color: #555; font-weight: bold;">±</span>
+7.02%</span>
+
+</td>
+            <td>0.125<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>CExtensionCallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-382" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-382-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-382-0" 
+                        aria-controls="#tab-content-phpbench-component-382-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-382-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-382-1" 
+                        aria-controls="#tab-content-phpbench-component-382-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-382-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-382-0"
+          >
+<br/>
+              <div id="phpbench-component-383" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [0.16097847358121328,0.36043052837573375,0.7400391389432478],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.03469870314579496,0.06306948549021146,0.174251857952792],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.07400391389432479,0.14800782778864957,0.22201174168297436,0.29601565557729914,0.37001956947162395,0.4440234833659487,0.5180273972602735,0.5920313111545983,0.6660352250489231],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-383'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-382-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-382-1"
+          >
+<br/>
+              <div id="phpbench-component-384" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341904,1341904,1341904],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134190.4,268380.8,402571.19999999995,536761.6,670952,805142.3999999999,939332.7999999999,1073523.2,1207713.5999999999,1341904],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-384'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-385" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-385-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-385-0" 
+                        aria-controls="#tab-content-phpbench-component-385-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-385-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-385-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.161<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #300000">
+    <span style="color: #555; font-weight: bold;">±</span>
+19.72%</span>
+
+</td>
+            <td>0.035<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.46%</span>
+
+</td>
+            <td>0.063<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.740<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.71%</span>
+
+</td>
+            <td>0.174<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>RustExtensionCallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-406" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-406-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-406-0" 
+                        aria-controls="#tab-content-phpbench-component-406-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-406-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-406-1" 
+                        aria-controls="#tab-content-phpbench-component-406-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-406-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-406-0"
+          >
+<br/>
+              <div id="phpbench-component-407" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [0.3824266144814089,0.7367906066536196,1.4638747553816045],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.13172224565349622,0.1264127762530355,0.7625981903991117],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.14638747553816045,0.2927749510763209,0.43916242661448135,0.5855499021526418,0.7319373776908022,0.8783248532289627,1.0247123287671231,1.1710998043052836,1.317487279843444,1.4638747553816045],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-407'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-406-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-406-1"
+          >
+<br/>
+              <div id="phpbench-component-408" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341904,1341904,1341904],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134190.4,268380.8,402571.19999999995,536761.6,670952,805142.3999999999,939332.7999999999,1073523.2,1207713.5999999999,1341904],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-408'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-409" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-409-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-409-0" 
+                        aria-controls="#tab-content-phpbench-component-409-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-409-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-409-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.382<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #510000">
+    <span style="color: #555; font-weight: bold;">±</span>
+32.40%</span>
+
+</td>
+            <td>0.132<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.737<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.02%</span>
+
+</td>
+            <td>0.126<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.464<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #750000">
+    <span style="color: #555; font-weight: bold;">±</span>
+46.16%</span>
+
+</td>
+            <td>0.763<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>FunctionCallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-430" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-430-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-430-0" 
+                        aria-controls="#tab-content-phpbench-component-430-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-430-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-430-1" 
+                        aria-controls="#tab-content-phpbench-component-430-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-430-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-430-0"
+          >
+<br/>
+              <div id="phpbench-component-431" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [0.30612524461839546,0.8284931506849332,1.877201565557729],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.11174542496227749,0.09974342083566215,0.6420298746943155],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.1877201565557729,0.3754403131115458,0.5631604696673187,0.7508806262230916,0.9386007827788645,1.1263209393346374,1.3140410958904103,1.5017612524461832,1.689481409001956,1.877201565557729],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-431'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-430-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-430-1"
+          >
+<br/>
+              <div id="phpbench-component-432" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341904,1341904,1341904],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134190.4,268380.8,402571.19999999995,536761.6,670952,805142.3999999999,939332.7999999999,1073523.2,1207713.5999999999,1341904],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-432'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-433" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-433-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-433-0" 
+                        aria-controls="#tab-content-phpbench-component-433-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-433-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-433-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.306<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #560000">
+    <span style="color: #555; font-weight: bold;">±</span>
+34.24%</span>
+
+</td>
+            <td>0.112<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.828<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #1c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+11.59%</span>
+
+</td>
+            <td>0.100<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.877<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #510000">
+    <span style="color: #555; font-weight: bold;">±</span>
+32.69%</span>
+
+</td>
+            <td>0.642<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>CExtensionSSECallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-454" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-454-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-454-0" 
+                        aria-controls="#tab-content-phpbench-component-454-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-454-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-454-1" 
+                        aria-controls="#tab-content-phpbench-component-454-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-454-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-454-0"
+          >
+<br/>
+              <div id="phpbench-component-455" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [0.17356164383561642,0.38264187866927596,0.7486692759295499],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0.5974811377775875,0.5662297325291211,0.3513315243470191],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,0.07486692759295499,0.14973385518590998,0.22460078277886497,0.29946771037181996,0.37433463796477495,0.44920156555772994,0.5240684931506849,0.5989354207436399,0.6738023483365949,0.7486692759295499],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","0.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-455'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-454-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-454-1"
+          >
+<br/>
+              <div id="phpbench-component-456" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341904,1341904,1341904],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134190.4,268380.8,402571.19999999995,536761.6,670952,805142.3999999999,939332.7999999999,1073523.2,1207713.5999999999,1341904],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-456'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-457" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-457-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-457-0" 
+                        aria-controls="#tab-content-phpbench-component-457-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-457-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-457-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.174<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+257.20%</span>
+
+</td>
+            <td>0.597<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.383<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+123.98%</span>
+
+</td>
+            <td>0.566<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.749<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #660000">
+    <span style="color: #555; font-weight: bold;">±</span>
+40.87%</span>
+
+</td>
+            <td>0.351<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+                    <div>
+            <h2>FFICallBench</h2>
+                                <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-478" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-478-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-478-0" 
+                        aria-controls="#tab-content-phpbench-component-478-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-478-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-478-1" 
+                        aria-controls="#tab-content-phpbench-component-478-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-478-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-478-0"
+          >
+<br/>
+              <div id="phpbench-component-479" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [18.662896281800354,19.3889823874755,20.51534246575339],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [5.343947128293839,4.883347106237688,3.6276148693046233],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,2.051534246575339,4.103068493150678,6.154602739726017,8.206136986301356,10.257671232876696,12.309205479452034,14.360739726027372,16.412273972602712,18.463808219178052],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.1<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","6.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","8.2<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","10.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","12.3<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","14.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","16.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","18.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Average iteration times by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-479'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-478-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-478-1"
+          >
+<br/>
+              <div id="phpbench-component-480" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        name: '<current>',
+        y: [1341896,1341896,1341896],
+        type: 'bar',
+                error_y: {
+            type: 'data',
+            array: [0,0,0],
+            visible: true,
+        }
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134189.6,268379.2,402568.80000000005,536758.4,670948,805137.6000000001,939327.2000000001,1073516.8,1207706.4000000001,1341896],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","670.9<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+    }
+};
+layout.title = "Memory by variant";
+Plotly.newPlot(document.getElementById('phpbench-component-480'), data, layout);
+</script>
+          </div>
+                          </div>
+    </div>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-481" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-481-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-481-0" 
+                        aria-controls="#tab-content-phpbench-component-481-0" 
+                        aria-current="page" 
+                        >
+                        &lt;current&gt;                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-481-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-481-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=5></th>
+                        </tr>
+        <tr>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>18.663<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #3d0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+24.91%</span>
+
+</td>
+            <td>5.344<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>19.389<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #380000">
+    <span style="color: #555; font-weight: bold;">±</span>
+22.18%</span>
+
+</td>
+            <td>4.883<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>20.515<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.02%</span>
+
+</td>
+            <td>3.628<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+            </div>
+    <div>
+            <h2>Overview</h2>
+                                <table class="table table-striped table-bordered table-hover">
+            <caption>Suites</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=9></th>
+                        </tr>
+        <tr>
+                            <th>suite</th>
+                            <th>date</th>
+                            <th>php</th>
+                            <th>vcs branch</th>
+                            <th>xdebug</th>
+                            <th>iterations</th>
+                            <th>revs</th>
+                            <th>mode</th>
+                            <th>net_time</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>&lt;current&gt;</td>
+            <td>2023-12-03 20:30:54</td>
+            <td>8.2.12</td>
+            <td>null</td>
+            <td><span style="font-weight: bold; color: red">false</span>
+</td>
+            <td>2400</td>
+            <td>240000</td>
+            <td>0.911<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>920.644<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-517" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-517-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-517-0" 
+                        aria-controls="#tab-content-phpbench-component-517-0" 
+                        aria-current="page" 
+                        >
+                        Time                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-517-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-517-1" 
+                        aria-controls="#tab-content-phpbench-component-517-1" 
+                        aria-current="page" 
+                        >
+                        Memory                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-517-2" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-517-2" 
+                        aria-controls="#tab-content-phpbench-component-517-2" 
+                        aria-current="page" 
+                        >
+                        By Benchmark                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-517-3" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-517-3" 
+                        aria-controls="#tab-content-phpbench-component-517-3" 
+                        aria-current="page" 
+                        >
+                        Table                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-517-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-517-0"
+          >
+<br/>
+              <div id="phpbench-component-518" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["FFIPreparedCallBench","ClassCallBench","FunctionUnrollCallBench","CExtensionCallBench","RustExtensionCallBench","FunctionCallBench","CExtensionSSECallBench","FFICallBench"],
+        name: '<current>',
+        y: [1.4094324853228934,1.4216046966731906,0.3552054794520548,0.30727984344422715,0.5472602739726028,0.4428375733855186,0.2795890410958904,19.42610567514671],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,1.9426105675146712,3.8852211350293424,5.827831702544014,7.770442270058685,9.713052837573356,11.655663405088028,13.598273972602698,15.54088454011737,17.48349510763204,19.42610567514671],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","3.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","5.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","7.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","9.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["FFIPreparedCallBench","ClassCallBench","FunctionUnrollCallBench","CExtensionCallBench","RustExtensionCallBench","FunctionCallBench","CExtensionSSECallBench","FFICallBench"],
+        ticktext: ["FFIPreparedCallBench","ClassCallBench","FunctionUnrollCallBench","CExtensionCallBench","RustExtensionCallBench","FunctionCallBench","CExtensionSSECallBench","FFICallBench"],
+    }
+};
+layout.title = "Average iteration times aggregated by benchmark";
+Plotly.newPlot(document.getElementById('phpbench-component-518'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-517-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-517-1"
+          >
+<br/>
+              <div id="phpbench-component-519" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["FFIPreparedCallBench","ClassCallBench","FunctionUnrollCallBench","CExtensionCallBench","RustExtensionCallBench","FunctionCallBench","CExtensionSSECallBench","FFICallBench"],
+        name: '<current>',
+        y: [1341904,1341896,1341912,1341904,1341904,1341904,1341904,1341896],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,134191.2,268382.4,402573.60000000003,536764.8,670956,805147.2000000001,939338.4000000001,1073529.6,1207720.8,1341912],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","134.2<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","268.4<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","402.6<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","536.8<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","671.0<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","805.1<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","939.3<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.1<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.2<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.3<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["FFIPreparedCallBench","ClassCallBench","FunctionUnrollCallBench","CExtensionCallBench","RustExtensionCallBench","FunctionCallBench","CExtensionSSECallBench","FFICallBench"],
+        ticktext: ["FFIPreparedCallBench","ClassCallBench","FunctionUnrollCallBench","CExtensionCallBench","RustExtensionCallBench","FunctionCallBench","CExtensionSSECallBench","FFICallBench"],
+    }
+};
+layout.title = "Average peak memory aggregated by benchmark";
+Plotly.newPlot(document.getElementById('phpbench-component-519'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-517-2" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-517-2"
+          >
+<br/>
+              <div id="phpbench-component-520" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["<current>"],
+        name: 'FFIPreparedCallBench',
+        y: [1.4094324853228934],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'ClassCallBench',
+        y: [1.4216046966731906],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'FunctionUnrollCallBench',
+        y: [0.3552054794520548],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'CExtensionCallBench',
+        y: [0.30727984344422715],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'RustExtensionCallBench',
+        y: [0.5472602739726028],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'FunctionCallBench',
+        y: [0.4428375733855186],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'CExtensionSSECallBench',
+        y: [0.2795890410958904],
+        type: 'bar',
+            },
+        {
+        x: ["<current>"],
+        name: 'FFICallBench',
+        y: [19.42610567514671],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,1.9426105675146712,3.8852211350293424,5.827831702544014,7.770442270058685,9.713052837573356,11.655663405088028,13.598273972602698,15.54088454011737,17.48349510763204,19.42610567514671],
+        ticktext: ["0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","3.9<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","5.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","7.8<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","9.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.7<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.6<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.5<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.4<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["<current>"],
+        ticktext: ["<current>"],
+    }
+};
+layout.title = "By Benchmark";
+Plotly.newPlot(document.getElementById('phpbench-component-520'), data, layout);
+</script>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-517-3" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-517-3"
+          >
+<br/>
+              <div>
+            <h2>Table</h2>
+                                <table class="table table-striped table-bordered table-hover">
+            <caption>&lt;current&gt;</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=8></th>
+                        </tr>
+        <tr>
+                            <th>benchmark</th>
+                            <th>subject</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>FFIPreparedCallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.870<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>4.530<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.899<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #660000">
+    <span style="color: #555; font-weight: bold;">±</span>
+40.51%</span>
+
+</td>
+            <td>0.395<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FFIPreparedCallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.510<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>2.880<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.542<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #1e0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+12.65%</span>
+
+</td>
+            <td>0.204<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FFIPreparedCallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>2.730<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>8.320<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>2.828<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.07%</span>
+
+</td>
+            <td>0.627<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>ClassCallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.080<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.770<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.103<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #230000">
+    <span style="color: #555; font-weight: bold;">±</span>
+14.31%</span>
+
+</td>
+            <td>0.169<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>ClassCallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>2.210<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>7.030<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>2.295<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #440000">
+    <span style="color: #555; font-weight: bold;">±</span>
+27.72%</span>
+
+</td>
+            <td>0.694<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>ClassCallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>4.380<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>11.990<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>4.544<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #330000">
+    <span style="color: #555; font-weight: bold;">±</span>
+20.05%</span>
+
+</td>
+            <td>0.973<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionUnrollCallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.300<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>2.260<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.315<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #910000">
+    <span style="color: #555; font-weight: bold;">±</span>
+57.80%</span>
+
+</td>
+            <td>0.196<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionUnrollCallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.770<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.260<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.781<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #160000">
+    <span style="color: #555; font-weight: bold;">±</span>
+9.60%</span>
+
+</td>
+            <td>0.078<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionUnrollCallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.690<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>2.470<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.734<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #110000">
+    <span style="color: #555; font-weight: bold;">±</span>
+7.02%</span>
+
+</td>
+            <td>0.125<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionCallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.320<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.161<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #300000">
+    <span style="color: #555; font-weight: bold;">±</span>
+19.72%</span>
+
+</td>
+            <td>0.035<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionCallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.340<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.700<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.46%</span>
+
+</td>
+            <td>0.063<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionCallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.680<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.860<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.740<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #350000">
+    <span style="color: #555; font-weight: bold;">±</span>
+21.71%</span>
+
+</td>
+            <td>0.174<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>RustExtensionCallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.370<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.382<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #510000">
+    <span style="color: #555; font-weight: bold;">±</span>
+32.40%</span>
+
+</td>
+            <td>0.132<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>RustExtensionCallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.720<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.380<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.737<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.02%</span>
+
+</td>
+            <td>0.126<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>RustExtensionCallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.400<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>6.840<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.464<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #750000">
+    <span style="color: #555; font-weight: bold;">±</span>
+46.16%</span>
+
+</td>
+            <td>0.763<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionCallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.290<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.320<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.306<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #560000">
+    <span style="color: #555; font-weight: bold;">±</span>
+34.24%</span>
+
+</td>
+            <td>0.112<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionCallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.720<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.828<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #1c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+11.59%</span>
+
+</td>
+            <td>0.100<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FunctionCallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>1.650<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>8.100<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>1.877<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #510000">
+    <span style="color: #555; font-weight: bold;">±</span>
+32.69%</span>
+
+</td>
+            <td>0.642<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionSSECallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>6.170<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.174<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+257.20%</span>
+
+</td>
+            <td>0.597<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionSSECallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.350<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>5.910<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.383<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #fe0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+123.98%</span>
+
+</td>
+            <td>0.566<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>CExtensionSSECallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.680<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>3.870<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>0.749<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #660000">
+    <span style="color: #555; font-weight: bold;">±</span>
+40.87%</span>
+
+</td>
+            <td>0.351<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FFICallBench</td>
+            <td>benchSmallSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>17.340<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>43.340<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>18.663<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #3d0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+24.91%</span>
+
+</td>
+            <td>5.344<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FFICallBench</td>
+            <td>benchMiddleSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>17.950<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>41.670<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>19.389<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #380000">
+    <span style="color: #555; font-weight: bold;">±</span>
+22.18%</span>
+
+</td>
+            <td>4.883<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+                    <tr>
+            <td>FFICallBench</td>
+            <td>benchBigSize ()</td>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>19.190<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>34.940<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>20.515<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td><span style="color: #280000">
+    <span style="color: #555; font-weight: bold;">±</span>
+16.02%</span>
+
+</td>
+            <td>3.628<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+            </div>
+          </div>
+                          </div>
+    </div>
+            </div>
+    </body>
+    <footer>
+        <center>
+        Generated by <a href="https://github.com/phpbench/phpbench">PHPBench</a>
+        </center>
+    </footer>
+    <script type="text/javascript">
+    /**
+     * Resize Plots when tab is activated
+     */
+    (function () {
+        var tabEls = document.querySelectorAll('button[data-bs-toggle="tab"]')
+        tabEls.forEach(function (tabEl) {
+            tabEl.addEventListener('shown.bs.tab', function (event) {
+console.log(event);
+                var docs = event.target.parentNode.parentNode.parentNode.querySelectorAll('.tab-pane.active .js-plotly-plot');
+                docs.forEach(function (plotEl) {
+                    Plotly.relayout(plotEl, {autosize: true});
+                });
+            });
+        });
+    })();
+    </script>
+</html>

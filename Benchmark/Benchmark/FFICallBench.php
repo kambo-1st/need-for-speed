@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+use Kambo\Benchmark\AbstractBench;
+
 /**
  * @BeforeMethods({"init"})
  * @Iterations(100)
@@ -7,7 +9,7 @@
  * @Warmup(100)
  * @OutputTimeUnit("microseconds", precision=5)
  */
-class FFICallBench
+class FFICallBench extends AbstractBench
 {
     public function init()
     {

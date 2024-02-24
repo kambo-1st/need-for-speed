@@ -9,27 +9,20 @@ use Kambo\Benchmark\AbstractBench;
  * @Warmup(100)
  * @OutputTimeUnit("microseconds", precision=5)
  */
-class FFIPreparedCallBench extends AbstractBench
+class FunctionFceCallBench extends AbstractBench
 {
-    private FFI $ffi;
-
     public function init()
     {
         $path = getcwd().DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
-        require_once $path.DIRECTORY_SEPARATOR.'ffi_call.php';
-        $this->ffi = FFI::cdef(
-            "double cosine_similarity(const double *array1, const double *array2, int size);",
-            __DIR__ . "/../../cosine_similarity_c_lib/libcosine_similarity.so"
-        );
+        require_once $path.DIRECTORY_SEPARATOR.'function_call.php';
     }
-
 
     /**
      *
      */
     public function benchSmallSize()
     {
-        cosine_similarity_prepared_ffi($this->ffi, [1,2,3,4,5], [3,4,5,6,7]);
+        cosine_similarity_func_like([1,2,3,4,5], [3,4,5,6,7]);
     }
 
     /**
@@ -37,8 +30,7 @@ class FFIPreparedCallBench extends AbstractBench
      */
     public function benchMiddleSize()
     {
-        cosine_similarity_prepared_ffi(
-            $this->ffi,
+        cosine_similarity_func_like(
             [
                 15726,
                 38758,
@@ -81,8 +73,7 @@ class FFIPreparedCallBench extends AbstractBench
      */
     public function benchBigSize()
     {
-        cosine_similarity_prepared_ffi(
-            $this->ffi,
+        cosine_similarity_func_like(
             [
                 3531,
                 10535,

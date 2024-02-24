@@ -33,6 +33,7 @@ docker compose run cli
 ./vendor/bin/phpbench run --report=connectors_comparison --output=html --report=aggregate --report=benchmark --report=overview
 ```
 
+
 ##  Extension
 
 Inside docker:

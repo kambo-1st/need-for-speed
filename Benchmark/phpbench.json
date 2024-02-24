@@ -3,14 +3,15 @@
   "runner.bootstrap": "vendor/autoload.php",
   "runner.path": "Benchmark",
   "report.generators": {
-    "connectors_comparison": {
-      "title": "DuckDB connectors comparison",
-      "description": "Compares different implementations of the DuckDB connectors",
+    "all_aggregate": {
+      "title": "Cosine similarity call comparison",
+      "description": "Cosine similarity call comparison",
       "generator": "component",
+      "filter": "contains(subject_groups, 'cosine_similarity')",
       "components": [
         {
           "component": "bar_chart_aggregate",
-          "x_partition": "'Basic Usage'",
+          "x_partition" : ["subject_name", "variant_name"],
           "bar_partition": "benchmark_name",
           "y_expr": "mode(partition['result_time_avg']) as time",
           "y_axes_label": "yValue as time"
@@ -23,7 +24,115 @@
             {
               "title": "{{ first(frame['benchmark_name']) }}",
               "component": "table_aggregate",
-              "partition": ["variant_name"],
+              "partition": ["subject_name", "variant_name"],
+              "row": {
+                "variant": "first(partition['subject_name'])",
+                "memory": "first(partition['result_mem_peak']) as memory",
+                "min": "min(partition['result_time_avg']) as time",
+                "max": "max(partition['result_time_avg']) as time",
+                "mode": "mode(partition['result_time_avg']) as time",
+                "rstdev": "rstdev(partition['result_time_avg'])",
+                "stdev": "stdev(partition['result_time_avg']) as time"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "bench_small_size": {
+      "title": "Cosine similarity call comparison - small size",
+      "description": "Cosine similarity call comparison",
+      "generator": "component",
+      "filter": "subject_name = 'benchSmallSize'",
+      "components": [
+        {
+          "component": "bar_chart_aggregate",
+          "x_partition" : ["subject_name", "variant_name"],
+          "bar_partition": "benchmark_name",
+          "y_expr": "mode(partition['result_time_avg']) as time",
+          "y_axes_label": "yValue as time"
+        },
+        {
+          "component": "section",
+          "tabbed": true,
+          "partition": ["benchmark_name"],
+          "components": [
+            {
+              "title": "{{ first(frame['benchmark_name']) }}",
+              "component": "table_aggregate",
+              "partition": ["subject_name", "variant_name"],
+              "row": {
+                "variant": "first(partition['subject_name'])",
+                "memory": "first(partition['result_mem_peak']) as memory",
+                "min": "min(partition['result_time_avg']) as time",
+                "max": "max(partition['result_time_avg']) as time",
+                "mode": "mode(partition['result_time_avg']) as time",
+                "rstdev": "rstdev(partition['result_time_avg'])",
+                "stdev": "stdev(partition['result_time_avg']) as time"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "bench_middle_size": {
+      "title": "Cosine similarity call comparison - middle size",
+      "description": "Cosine similarity call comparison",
+      "generator": "component",
+      "filter": "subject_name = 'benchMiddleSize'",
+      "components": [
+        {
+          "component": "bar_chart_aggregate",
+          "x_partition" : ["subject_name", "variant_name"],
+          "bar_partition": "benchmark_name",
+          "y_expr": "mode(partition['result_time_avg']) as time",
+          "y_axes_label": "yValue as time"
+        },
+        {
+          "component": "section",
+          "tabbed": true,
+          "partition": ["benchmark_name"],
+          "components": [
+            {
+              "title": "{{ first(frame['benchmark_name']) }}",
+              "component": "table_aggregate",
+              "partition": ["subject_name", "variant_name"],
+              "row": {
+                "variant": "first(partition['subject_name'])",
+                "memory": "first(partition['result_mem_peak']) as memory",
+                "min": "min(partition['result_time_avg']) as time",
+                "max": "max(partition['result_time_avg']) as time",
+                "mode": "mode(partition['result_time_avg']) as time",
+                "rstdev": "rstdev(partition['result_time_avg'])",
+                "stdev": "stdev(partition['result_time_avg']) as time"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "bench_big_size": {
+      "title": "Cosine similarity call comparison - big size",
+      "description": "Cosine similarity call comparison",
+      "generator": "component",
+      "filter": "subject_name = 'benchBigSize'",
+      "components": [
+        {
+          "component": "bar_chart_aggregate",
+          "x_partition" : ["subject_name", "variant_name"],
+          "bar_partition": "benchmark_name",
+          "y_expr": "mode(partition['result_time_avg']) as time",
+          "y_axes_label": "yValue as time"
+        },
+        {
+          "component": "section",
+          "tabbed": true,
+          "partition": ["benchmark_name"],
+          "components": [
+            {
+              "title": "{{ first(frame['benchmark_name']) }}",
+              "component": "table_aggregate",
+              "partition": ["subject_name", "variant_name"],
               "row": {
                 "variant": "first(partition['subject_name'])",
                 "memory": "first(partition['result_mem_peak']) as memory",

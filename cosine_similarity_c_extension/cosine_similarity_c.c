@@ -23,34 +23,6 @@
 	ZEND_PARSE_PARAMETERS_END()
 #endif
 
-/* {{{ void test1() */
-PHP_FUNCTION(test1)
-{
-	ZEND_PARSE_PARAMETERS_NONE();
-
-	php_printf("The extension %s is loaded and working!\r\n", "cosine_similarity_c");
-}
-/* }}} */
-
-/* {{{ string test2( [ string $var ] ) */
-PHP_FUNCTION(test2)
-{
-	char *var = "World";
-	size_t var_len = sizeof("World") - 1;
-	zend_string *retval;
-
-	ZEND_PARSE_PARAMETERS_START(0, 1)
-		Z_PARAM_OPTIONAL
-		Z_PARAM_STRING(var, var_len)
-	ZEND_PARSE_PARAMETERS_END();
-
-	retval = strpprintf(0, "Hello %s", var);
-
-	RETURN_STR(retval);
-}
-/* }}}*/
-
-
 static double cosine_similarity_impl(const double *array1, const double *array2, int size) {
    double dot_product = 0.0;
    double magnitude_a = 0.0;
@@ -166,6 +138,48 @@ PHP_FUNCTION(cosine_similarity_c) {
     }
 
     result = cosine_similarity_impl(arr1, arr2, size1);
+
+    efree(arr1);
+    efree(arr2);
+
+    RETURN_DOUBLE(result);
+}
+
+PHP_FUNCTION(cosine_similarity_c_sse) {
+    zval *array1, *array2;
+    double *arr1, *arr2;
+    int size1, size2, i;
+    double result;
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "aa", &array1, &array2) == FAILURE) {
+        return;
+    }
+
+    size1 = zend_array_count(Z_ARRVAL_P(array1));
+    size2 = zend_array_count(Z_ARRVAL_P(array2));
+
+    // Ensure arrays are of the same size
+    if (size1 != size2) {
+        php_error_docref(NULL, E_WARNING, "Arrays must be of the same size");
+        RETURN_FALSE;
+    }
+
+    arr1 = (double *)emalloc(size1 * sizeof(double));
+    arr2 = (double *)emalloc(size2 * sizeof(double));
+
+    // Convert PHP arrays to C arrays
+    HashTable *arr_hash1 = Z_ARRVAL_P(array1);
+    HashTable *arr_hash2 = Z_ARRVAL_P(array2);
+    zval *val1, *val2;
+
+    for (i = 0, zend_hash_internal_pointer_reset(arr_hash1), zend_hash_internal_pointer_reset(arr_hash2);
+         (val1 = zend_hash_get_current_data(arr_hash1)) != NULL && (val2 = zend_hash_get_current_data(arr_hash2)) != NULL;
+         zend_hash_move_forward(arr_hash1), zend_hash_move_forward(arr_hash2), i++) {
+        arr1[i] = zval_get_double(val1);
+        arr2[i] = zval_get_double(val2);
+    }
+
+    result = cosine_similarity_impl_sse(arr1, arr2, size1);
 
     efree(arr1);
     efree(arr2);

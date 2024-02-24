@@ -9,27 +9,31 @@ use Kambo\Benchmark\AbstractBench;
  * @Warmup(100)
  * @OutputTimeUnit("microseconds", precision=5)
  */
-class FFIPreparedCallBench extends AbstractBench
+class CExtensionSSECallBench extends AbstractBench
 {
-    private FFI $ffi;
-
     public function init()
     {
-        $path = getcwd().DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
-        require_once $path.DIRECTORY_SEPARATOR.'ffi_call.php';
-        $this->ffi = FFI::cdef(
-            "double cosine_similarity(const double *array1, const double *array2, int size);",
-            __DIR__ . "/../../cosine_similarity_c_lib/libcosine_similarity.so"
-        );
-    }
+        /*$path = getcwd().DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
+        require_once $path.DIRECTORY_SEPARATOR.'function_call.php';*/
 
+        $result = dl('cosine_similarity_c.so');
+        if ($result === false) {
+            $error = 'Unable to load cosine_similarity_c.so';
+            if (!file_exists(ini_get('extension_dir').'/cosine_similarity_c.so')) {
+                $error = 'Extension in '.ini_get('extension_dir').'/cosine_similarity_c.so not found.';
+                $error .= PHP_EOL.'Please run `make install` in the extension directory';
+            }
+
+            throw new \RuntimeException($error);
+        }
+    }
 
     /**
      *
      */
     public function benchSmallSize()
     {
-        cosine_similarity_prepared_ffi($this->ffi, [1,2,3,4,5], [3,4,5,6,7]);
+        cosine_similarity_c_sse([1,2,3,4,5], [3,4,5,6,7]);
     }
 
     /**
@@ -37,8 +41,7 @@ class FFIPreparedCallBench extends AbstractBench
      */
     public function benchMiddleSize()
     {
-        cosine_similarity_prepared_ffi(
-            $this->ffi,
+        cosine_similarity_c_sse(
             [
                 15726,
                 38758,
@@ -81,44 +84,43 @@ class FFIPreparedCallBench extends AbstractBench
      */
     public function benchBigSize()
     {
-        cosine_similarity_prepared_ffi(
-            $this->ffi,
+        cosine_similarity_c_sse(
             [
-                3531,
-                10535,
-                39078,
-                19332,
-                33455,
-                17548,
-                9355,
-                3538,
-                3514,
-                35074,
-                30735,
-                57587,
-                63812,
-                60721,
-                18105,
-                60242,
-                60326,
-                50274,
-                8189,
-                61505,
-                42904,
-                2807,
-                5964,
-                16608,
-                41958,
-                35392,
-                60922,
-                24519,
-                21045,
-                23038,
-                60056,
-                19333,
-                1200,
-                32938,
-                64379,
+               3531,
+               10535,
+               39078,
+               19332,
+               33455,
+               17548,
+               9355,
+               3538,
+               3514,
+               35074,
+               30735,
+               57587,
+               63812,
+               60721,
+               18105,
+               60242,
+               60326,
+               50274,
+               8189,
+               61505,
+               42904,
+               2807,
+               5964,
+               16608,
+               41958,
+               35392,
+               60922,
+               24519,
+               21045,
+               23038,
+               60056,
+               19333,
+               1200,
+               32938,
+               64379,
             ],
             [
                 55470,
