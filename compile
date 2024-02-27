@@ -6,7 +6,7 @@ build_php_extension() {
     cd cosine_similarity_c_extension
     make clean
     phpize
-    ./configure
+    ./configure CFLAGS="-g0 -O2"
     make
     make test
     sudo cp modules/cosine_similarity_c.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/

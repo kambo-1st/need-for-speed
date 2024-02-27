@@ -11,7 +11,7 @@ use PhpBench\Attributes as Bench;
  * @Warmup(100)
  * @OutputTimeUnit("microseconds", precision=5)
  */
-class CExtensionSSECallBench extends AbstractBench
+class CExtensionOptiCallBench extends AbstractBench
 {
     public function init()
     {
@@ -33,18 +33,18 @@ class CExtensionSSECallBench extends AbstractBench
     #[Bench\ParamProviders(['provideData'])]
     public function benchSmallSize($params)
     {
-        return cosine_similarity_c_sse($params['small'][0], $params['small'][1]);
+        return cosine_similarity_c_opti($params['small'][0], $params['small'][1]);
     }
 
     #[Bench\ParamProviders(['provideData'])]
     public function benchMiddleSize($params)
     {
-        return cosine_similarity_c_sse($params['middle'][0], $params['middle'][1]);
+        return cosine_similarity_c_opti($params['middle'][0], $params['middle'][1]);
     }
 
     #[Bench\ParamProviders(['provideData'])]
     public function benchBigSize($params)
     {
-        return cosine_similarity_c_sse($params['big'][0], $params['big'][1]);
+        return cosine_similarity_c_opti($params['big'][0], $params['big'][1]);
     }
 }

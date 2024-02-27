@@ -15,6 +15,7 @@
 #include <xmmintrin.h>  // SSE extensions
 #include <emmintrin.h>  // SSE2 extensions
 #include <smmintrin.h>  // SSE4.1 extensions
+#include <immintrin.h>  // Include for AVX
 
 /* For compatibility with older PHP versions */
 #ifndef ZEND_PARSE_PARAMETERS_NONE
@@ -22,6 +23,22 @@
 	ZEND_PARSE_PARAMETERS_START(0, 0) \
 	ZEND_PARSE_PARAMETERS_END()
 #endif
+
+
+__attribute__((optimize("O3"))) static double cosine_similarity_impl_opti(const double *array1, const double *array2, int size) {
+   double dot_product = 0.0;
+   double magnitude_a = 0.0;
+   double magnitude_b = 0.0;
+   int i;
+
+   for (i = 0; i < size; ++i) {
+       dot_product += array1[i] * array2[i];
+       magnitude_a += array1[i] * array1[i];
+       magnitude_b += array2[i] * array2[i];
+   }
+
+   return dot_product / (sqrt(magnitude_a) * sqrt(magnitude_b));
+}
 
 static double cosine_similarity_impl(const double *array1, const double *array2, int size) {
    double dot_product = 0.0;
@@ -102,7 +119,55 @@ static double cosine_similarity_impl_sse(const double *array1, const double *arr
 
     return final_dot / (sqrt(final_mag_a) * sqrt(final_mag_b));
 }
+/*
+static double cosine_similarity_impl_avx(const double *array1, const double *array2, int size) {
+    __m256d sum_dot = _mm256_setzero_pd();
+    __m256d sum_mag_a = _mm256_setzero_pd();
+    __m256d sum_mag_b = _mm256_setzero_pd();
 
+    int i;
+    for (i = 0; i <= size - 4; i += 4) {  // Process quads of elements
+        __m256d a = _mm256_loadu_pd(&array1[i]);
+        __m256d b = _mm256_loadu_pd(&array2[i]);
+
+        sum_dot = _mm256_add_pd(sum_dot, _mm256_mul_pd(a, b));
+        sum_mag_a = _mm256_add_pd(sum_mag_a, _mm256_mul_pd(a, a));
+        sum_mag_b = _mm256_add_pd(sum_mag_b, _mm256_mul_pd(b, b));
+    }
+
+    // After processing blocks of 4 elements with AVX
+    double tail_dot = 0.0, tail_mag_a = 0.0, tail_mag_b = 0.0;
+    for (; i < size; ++i) {
+        double a = array1[i];
+        double b = array2[i];
+        tail_dot += a * b;
+        tail_mag_a += a * a;
+        tail_mag_b += b * b;
+    }
+
+    // Integrate scalar results with AVX results
+    // Convert scalar results to __m256d before adding to ensure type compatibility
+    __m256d tail_dot_avx = _mm256_set1_pd(tail_dot);
+    __m256d tail_mag_a_avx = _mm256_set1_pd(tail_mag_a);
+    __m256d tail_mag_b_avx = _mm256_set1_pd(tail_mag_b);
+
+    sum_dot = _mm256_add_pd(sum_dot, tail_dot_avx);
+    sum_mag_a = _mm256_add_pd(sum_mag_a, tail_mag_a_avx);
+    sum_mag_b = _mm256_add_pd(sum_mag_b, tail_mag_b_avx);
+
+    // Final reduction
+    double dot_product[4], magnitude_a[4], magnitude_b[4];
+    _mm256_storeu_pd(dot_product, sum_dot);
+    _mm256_storeu_pd(magnitude_a, sum_mag_a);
+    _mm256_storeu_pd(magnitude_b, sum_mag_b);
+
+    double final_dot = dot_product[0] + dot_product[1] + dot_product[2] + dot_product[3];
+    double final_mag_a = magnitude_a[0] + magnitude_a[1] + magnitude_a[2] + magnitude_a[3];
+    double final_mag_b = magnitude_b[0] + magnitude_b[1] + magnitude_b[2] + magnitude_b[3];
+
+    return final_dot / (sqrt(final_mag_a) * sqrt(final_mag_b));
+}
+*/
 PHP_FUNCTION(cosine_similarity_c) {
     zval *array1, *array2;
     double *arr1, *arr2;
@@ -180,6 +245,91 @@ PHP_FUNCTION(cosine_similarity_c_sse) {
     }
 
     result = cosine_similarity_impl_sse(arr1, arr2, size1);
+
+    efree(arr1);
+    efree(arr2);
+
+    RETURN_DOUBLE(result);
+}
+
+/*
+PHP_FUNCTION(cosine_similarity_c_avx) {
+    zval *array1, *array2;
+    double *arr1, *arr2;
+    int size1, size2, i;
+    double result;
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "aa", &array1, &array2) == FAILURE) {
+        return;
+    }
+
+    size1 = zend_array_count(Z_ARRVAL_P(array1));
+    size2 = zend_array_count(Z_ARRVAL_P(array2));
+
+    // Ensure arrays are of the same size
+    if (size1 != size2) {
+        php_error_docref(NULL, E_WARNING, "Arrays must be of the same size");
+        RETURN_FALSE;
+    }
+
+    arr1 = (double *)emalloc(size1 * sizeof(double));
+    arr2 = (double *)emalloc(size2 * sizeof(double));
+
+    // Convert PHP arrays to C arrays
+    HashTable *arr_hash1 = Z_ARRVAL_P(array1);
+    HashTable *arr_hash2 = Z_ARRVAL_P(array2);
+    zval *val1, *val2;
+
+    for (i = 0, zend_hash_internal_pointer_reset(arr_hash1), zend_hash_internal_pointer_reset(arr_hash2);
+         (val1 = zend_hash_get_current_data(arr_hash1)) != NULL && (val2 = zend_hash_get_current_data(arr_hash2)) != NULL;
+         zend_hash_move_forward(arr_hash1), zend_hash_move_forward(arr_hash2), i++) {
+        arr1[i] = zval_get_double(val1);
+        arr2[i] = zval_get_double(val2);
+    }
+
+    result = cosine_similarity_impl_avx(arr1, arr2, size1);
+
+    efree(arr1);
+    efree(arr2);
+
+    RETURN_DOUBLE(result);
+}
+*/
+PHP_FUNCTION(cosine_similarity_c_opti) {
+    zval *array1, *array2;
+    double *arr1, *arr2;
+    int size1, size2, i;
+    double result;
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "aa", &array1, &array2) == FAILURE) {
+        return;
+    }
+
+    size1 = zend_array_count(Z_ARRVAL_P(array1));
+    size2 = zend_array_count(Z_ARRVAL_P(array2));
+
+    // Ensure arrays are of the same size
+    if (size1 != size2) {
+        php_error_docref(NULL, E_WARNING, "Arrays must be of the same size");
+        RETURN_FALSE;
+    }
+
+    arr1 = (double *)emalloc(size1 * sizeof(double));
+    arr2 = (double *)emalloc(size2 * sizeof(double));
+
+    // Convert PHP arrays to C arrays
+    HashTable *arr_hash1 = Z_ARRVAL_P(array1);
+    HashTable *arr_hash2 = Z_ARRVAL_P(array2);
+    zval *val1, *val2;
+
+    for (i = 0, zend_hash_internal_pointer_reset(arr_hash1), zend_hash_internal_pointer_reset(arr_hash2);
+         (val1 = zend_hash_get_current_data(arr_hash1)) != NULL && (val2 = zend_hash_get_current_data(arr_hash2)) != NULL;
+         zend_hash_move_forward(arr_hash1), zend_hash_move_forward(arr_hash2), i++) {
+        arr1[i] = zval_get_double(val1);
+        arr2[i] = zval_get_double(val2);
+    }
+
+    result = cosine_similarity_impl_opti(arr1, arr2, size1);
 
     efree(arr1);
     efree(arr2);

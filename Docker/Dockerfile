@@ -9,6 +9,7 @@ RUN apt-get update && \
             sudo \
             libffi-dev \
             libclang-dev \
+            nano \
             unzip && \
     	docker-php-ext-configure ffi && \
     	docker-php-ext-install -j$(nproc) ffi && \
@@ -49,5 +50,6 @@ RUN ["chmod", "+x", "/usr/local/bin/docker-entrypoint.sh"]
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 COPY Docker/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+COPY Docker/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
 CMD ["bash"]

@@ -89,6 +89,6 @@ if test "$PHP_COSINE_SIMILARITY_C" != "no"; then
 
   dnl In case of no dependencies
   AC_DEFINE(HAVE_COSINE_SIMILARITY_C, 1, [ Have cosine_similarity_c support ])
-
+  dnl -mavx2
   PHP_NEW_EXTENSION(cosine_similarity_c, cosine_similarity_c.c, $ext_shared,, -msse4.1)
 fi

@@ -2,6 +2,9 @@
   "$schema":"./vendor/phpbench/phpbench/phpbench.schema.json",
   "runner.bootstrap": "vendor/autoload.php",
   "runner.path": "Benchmark",
+  "runner.php_config" : {
+    "opcache.optimization_level": "8192M"
+  },
   "report.generators": {
     "all_aggregate": {
       "title": "Cosine similarity call comparison",

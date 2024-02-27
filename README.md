@@ -17,6 +17,13 @@ Implemented versions:
 
 Everyone can reproduce results from the article/post/presentation. You will need Docker and Docker compose to get started.
 
+
+## Building Docker Container
+
+```bash
+docker-compose build cli
+```
+
 ## Starting Docker Container with a prebuilt environment
 
 ```bash
@@ -31,6 +38,7 @@ docker compose run cli
 
 ```bash
 ./vendor/bin/phpbench run --report=connectors_comparison --output=html --report=aggregate --report=benchmark --report=overview
+./vendor/bin/phpbench run --report=all_aggregate --report=bench_small_size --report=bench_middle_size --report=bench_big_size  --output=html
 ```
 
 

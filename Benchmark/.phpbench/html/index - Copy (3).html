@@ -17,63 +17,63 @@
 <script>
 var data = [
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'FFIPreparedCallBench',
-        y: [1.0056164383561643,1.6536790606653624,2.8981213307240696],
+        y: [0.8665753424657532,1.493365949119373,2.699275929549901],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'ClassCallBench',
-        y: [1.2529941291585127,2.462035225048923,4.784324853228961],
+        y: [1.0840508806262232,2.2269275929549917,4.446947162426616],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'FunctionUnrollCallBench',
-        y: [0.4687279843444227,1.1065753424657532,2.3836594911937365],
+        y: [0.30573385518590995,0.7763209393346381,1.7059099804305284],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'CExtensionCallBench',
-        y: [0.23019569471624268,0.39121330724070447,0.7250684931506851],
+        y: [0.1578082191780822,0.3482778864970643,0.7102739726027395],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'RustExtensionCallBench',
-        y: [0.4592954990215264,0.8001174168297456,1.5030332681017613],
+        y: [0.3733463796477495,0.7264970645792563,1.4354794520547944],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'FunctionCallBench',
-        y: [0.4139921722113503,0.9737964774951082,2.085048923679059],
+        y: [0.2995890410958909,0.8097455968688844,1.809021526418787],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'CExtensionSSECallBench',
-        y: [0.23090019569471623,0.39340508806262237,0.7220547945205483],
+        y: [0.15281800391389436,0.33896281800391387,0.6989823874755386],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'FFICallBench',
-        y: [21.511545988258334,22.354168297456006,23.598532289628164],
+        y: [19.781643835616425,20.503874755381567,21.777005870841478],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'CExtensionOptiCallBench',
-        y: [0.23489236790606652,0.3974168297455968,0.7380234833659493],
+        y: [0.15483365949119374,0.342876712328767,0.7107632093933465],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        x: ["benchSmallSize","benchMiddleSize","benchBigSize"],
         name: 'FunctionFceCallBench',
-        y: [1.3300195694716244,2.520058708414872,4.8661448140900205],
+        y: [1.1445401174168293,2.2799999999999994,4.489315068493156],
         type: 'bar',
             },
     ]
@@ -81,12 +81,12 @@ var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,2.3598532289628165,4.719706457925633,7.07955968688845,9.439412915851266,11.799266144814082,14.1591193737769,16.518972602739716,18.87882583170253,21.238679060665348,23.598532289628164],
-        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.360<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.720<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","7.080<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","9.439<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.799<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","14.159<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","16.519<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","18.879<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","21.239<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","23.599<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+        tickvals: [0,2.1777005870841477,4.355401174168295,6.533101761252443,8.71080234833659,10.888502935420739,13.066203522504885,15.243904109589034,17.42160469667318,19.599305283757328,21.777005870841478],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.178<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.355<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","6.533<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","8.711<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","10.889<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.066<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.244<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.422<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.599<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","21.777<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
-        tickvals: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
-        ticktext: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
+        tickvals: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
     }
 };
 Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
@@ -231,56 +231,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.970<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.830<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.500<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.006<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.867<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #700000">
+            <td><span style="color: #330000">
     <span style="color: #555; font-weight: bold;">±</span>
-44.80%</span>
+20.66%</span>
 
 </td>
-            <td>0.504<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.190<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.610<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.450<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.090<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.220<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.654<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.493<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #2d0000">
+            <td><span style="color: #280000">
     <span style="color: #555; font-weight: bold;">±</span>
-18.33%</span>
+16.37%</span>
 
 </td>
-            <td>0.327<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.257<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.630<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.540<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.170<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.898<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.699<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #1c0000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.01%</span>
+11.40%</span>
 
 </td>
-            <td>0.335<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.320<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -312,56 +312,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.050<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.950<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.253<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.084<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #3f0000">
+            <td><span style="color: #2b0000">
     <span style="color: #555; font-weight: bold;">±</span>
-25.20%</span>
+17.61%</span>
 
 </td>
-            <td>0.348<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.201<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.380<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.160<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.860<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.860<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.462<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.227<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #4f0000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-31.33%</span>
+19.13%</span>
 
 </td>
-            <td>0.862<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.448<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.650<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.330<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>16.090<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.784<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.447<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #380000">
+            <td><span style="color: #230000">
     <span style="color: #555; font-weight: bold;">±</span>
-22.27%</span>
+14.63%</span>
 
 </td>
-            <td>1.167<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.687<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -393,56 +393,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.290<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.400<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.970<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.469<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.306<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #590000">
+            <td><span style="color: #510000">
     <span style="color: #555; font-weight: bold;">±</span>
-35.52%</span>
+32.93%</span>
 
 </td>
-            <td>0.175<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.105<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.900<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.750<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.960<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.440<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.107<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.776<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #380000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-22.93%</span>
+19.72%</span>
 
 </td>
-            <td>0.267<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.158<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.870<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.670<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>17.310<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.340<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.384<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.706<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #470000">
+            <td><span style="color: #260000">
     <span style="color: #555; font-weight: bold;">±</span>
-28.62%</span>
+15.14%</span>
 
 </td>
-            <td>0.715<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.269<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -474,56 +474,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.790<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.480<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.230<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.158<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #870000">
+            <td><span style="color: #8c0000">
     <span style="color: #555; font-weight: bold;">±</span>
-53.55%</span>
+55.35%</span>
 
 </td>
-            <td>0.135<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.097<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.550<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.940<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.391<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.348<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #720000">
+            <td><span style="color: #350000">
     <span style="color: #555; font-weight: bold;">±</span>
-45.55%</span>
+21.83%</span>
 
 </td>
-            <td>0.199<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.080<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.650<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>7.310<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.450<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.725<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.710<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #680000">
+            <td><span style="color: #350000">
     <span style="color: #555; font-weight: bold;">±</span>
-41.79%</span>
+21.94%</span>
 
 </td>
-            <td>0.337<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.164<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -555,56 +555,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.440<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.370<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.770<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.459<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.373<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #750000">
+            <td><span style="color: #5e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-46.20%</span>
+37.67%</span>
 
 </td>
-            <td>0.233<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.149<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.780<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.720<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>11.060<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.040<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.800<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.726<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #7a0000">
+            <td><span style="color: #3d0000">
     <span style="color: #555; font-weight: bold;">±</span>
-48.84%</span>
+24.90%</span>
 
 </td>
-            <td>0.441<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.192<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.460<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.390<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.790<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.710<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.503<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.435<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #5b0000">
+            <td><span style="color: #280000">
     <span style="color: #555; font-weight: bold;">±</span>
-36.41%</span>
+16.53%</span>
 
 </td>
-            <td>0.628<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.251<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -636,56 +636,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.370<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.270<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.180<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.414<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.300<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #560000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-34.71%</span>
+19.21%</span>
 
 </td>
-            <td>0.155<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.059<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.680<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>3.230<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td>0.810<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.460<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>0.974<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #440000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-27.38%</span>
+19.03%</span>
 
 </td>
-            <td>0.282<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.159<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.490<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.430<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.085<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.809<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #560000">
+            <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-34.07%</span>
+13.91%</span>
 
 </td>
-            <td>0.765<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.259<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -717,56 +717,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.140<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.550<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.450<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.231<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.153<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #fe0000">
+            <td><span style="color: #560000">
     <span style="color: #555; font-weight: bold;">±</span>
-104.72%</span>
+34.31%</span>
 
 </td>
-            <td>0.270<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.056<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.050<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.160<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.393<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.339<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #930000">
+            <td><span style="color: #3f0000">
     <span style="color: #555; font-weight: bold;">±</span>
-58.16%</span>
+25.34%</span>
 
 </td>
-            <td>0.254<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.091<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.190<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.380<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.722<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.699<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #5e0000">
+            <td><span style="color: #3a0000">
     <span style="color: #555; font-weight: bold;">±</span>
-37.34%</span>
+23.09%</span>
 
 </td>
-            <td>0.300<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.171<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -798,56 +798,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>20.040<span style="color: #555; font-weight: bold;">μs</span>
+            <td>18.270<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>54.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>40.340<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>21.512<span style="color: #555; font-weight: bold;">μs</span>
+            <td>19.782<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #2d0000">
+            <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-18.22%</span>
+13.99%</span>
 
 </td>
-            <td>4.408<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.986<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>20.890<span style="color: #555; font-weight: bold;">μs</span>
+            <td>19.180<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>53.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>39.680<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>22.354<span style="color: #555; font-weight: bold;">μs</span>
+            <td>20.504<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #2b0000">
+            <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-17.27%</span>
+13.76%</span>
 
 </td>
-            <td>4.280<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.033<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>21.910<span style="color: #555; font-weight: bold;">μs</span>
+            <td>20.360<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>45.230<span style="color: #555; font-weight: bold;">μs</span>
+            <td>39.930<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>23.599<span style="color: #555; font-weight: bold;">μs</span>
+            <td>21.777<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #260000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-15.07%</span>
+12.55%</span>
 
 </td>
-            <td>3.913<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.918<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -879,56 +879,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.390<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.620<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.235<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.155<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #870000">
+            <td><span style="color: #960000">
     <span style="color: #555; font-weight: bold;">±</span>
-53.13%</span>
+59.16%</span>
 
 </td>
-            <td>0.136<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.098<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.397<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.343<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #7c0000">
+            <td><span style="color: #440000">
     <span style="color: #555; font-weight: bold;">±</span>
-49.01%</span>
+27.52%</span>
 
 </td>
-            <td>0.216<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.670<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.650<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.738<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.711<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #770000">
+            <td><span style="color: #3d0000">
     <span style="color: #555; font-weight: bold;">±</span>
-47.29%</span>
+24.50%</span>
 
 </td>
-            <td>0.383<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.184<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -960,56 +960,56 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.120<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.800<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.210<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.330<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.145<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #680000">
+            <td><span style="color: #260000">
     <span style="color: #555; font-weight: bold;">±</span>
-41.11%</span>
+15.50%</span>
 
 </td>
-            <td>0.627<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.187<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.430<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.220<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>10.100<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.600<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.280<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #3f0000">
+            <td><span style="color: #280000">
     <span style="color: #555; font-weight: bold;">±</span>
-25.04%</span>
+16.09%</span>
 
 </td>
-            <td>0.701<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.389<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.680<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.360<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>16.570<span style="color: #555; font-weight: bold;">μs</span>
+            <td>8.490<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.866<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.489<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #380000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-22.24%</span>
+12.51%</span>
 
 </td>
-            <td>1.202<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.590<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1025,63 +1025,63 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 <script>
 var data = [
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'FFIPreparedCallBench',
-        y: [1.0056164383561643],
+        y: [0.8665753424657532],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'ClassCallBench',
-        y: [1.2529941291585127],
+        y: [1.0840508806262232],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'FunctionUnrollCallBench',
-        y: [0.4687279843444227],
+        y: [0.30573385518590995],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'CExtensionCallBench',
-        y: [0.23019569471624268],
+        y: [0.1578082191780822],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'RustExtensionCallBench',
-        y: [0.4592954990215264],
+        y: [0.3733463796477495],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'FunctionCallBench',
-        y: [0.4139921722113503],
+        y: [0.2995890410958909],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'CExtensionSSECallBench',
-        y: [0.23090019569471623],
+        y: [0.15281800391389436],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'FFICallBench',
-        y: [21.511545988258334],
+        y: [19.781643835616425],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'CExtensionOptiCallBench',
-        y: [0.23489236790606652],
+        y: [0.15483365949119374],
         type: 'bar',
             },
         {
-        x: ["benchSmallSize-hello"],
+        x: ["benchSmallSize"],
         name: 'FunctionFceCallBench',
-        y: [1.3300195694716244],
+        y: [1.1445401174168293],
         type: 'bar',
             },
     ]
@@ -1089,12 +1089,12 @@ var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,2.1511545988258334,4.302309197651667,6.4534637964775,8.604618395303334,10.755772994129167,12.906927592955,15.058082191780834,17.209236790606667,19.3603913894325,21.511545988258334],
-        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.151<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.302<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","6.453<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","8.605<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","10.756<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","12.907<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.058<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.209<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.360<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","21.512<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+        tickvals: [0,1.9781643835616425,3.956328767123285,5.934493150684927,7.91265753424657,9.890821917808212,11.868986301369855,13.847150684931497,15.82531506849314,17.80347945205478,19.781643835616425],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","1.978<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","3.956<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","5.934<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","7.913<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","9.891<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.869<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.847<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.825<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.803<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.782<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
-        tickvals: ["benchSmallSize-hello"],
-        ticktext: ["benchSmallSize-hello"],
+        tickvals: ["benchSmallSize"],
+        ticktext: ["benchSmallSize"],
     }
 };
 Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
@@ -1239,20 +1239,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.970<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.830<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.500<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.006<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.867<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #700000">
+            <td><span style="color: #330000">
     <span style="color: #555; font-weight: bold;">±</span>
-44.80%</span>
+20.66%</span>
 
 </td>
-            <td>0.504<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.190<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1284,20 +1284,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.050<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.950<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.253<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.084<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #3f0000">
+            <td><span style="color: #2b0000">
     <span style="color: #555; font-weight: bold;">±</span>
-25.20%</span>
+17.61%</span>
 
 </td>
-            <td>0.348<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.201<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1329,20 +1329,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.290<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.400<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.970<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.469<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.306<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #590000">
+            <td><span style="color: #510000">
     <span style="color: #555; font-weight: bold;">±</span>
-35.52%</span>
+32.93%</span>
 
 </td>
-            <td>0.175<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.105<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1374,20 +1374,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.790<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.480<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.230<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.158<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #870000">
+            <td><span style="color: #8c0000">
     <span style="color: #555; font-weight: bold;">±</span>
-53.55%</span>
+55.35%</span>
 
 </td>
-            <td>0.135<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.097<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1419,20 +1419,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.440<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.370<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.770<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.459<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.373<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #750000">
+            <td><span style="color: #5e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-46.20%</span>
+37.67%</span>
 
 </td>
-            <td>0.233<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.149<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1464,20 +1464,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.370<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.270<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.180<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.414<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.300<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #560000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-34.71%</span>
+19.21%</span>
 
 </td>
-            <td>0.155<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.059<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1509,20 +1509,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.140<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.550<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.450<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.231<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.153<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #fe0000">
+            <td><span style="color: #560000">
     <span style="color: #555; font-weight: bold;">±</span>
-104.72%</span>
+34.31%</span>
 
 </td>
-            <td>0.270<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.056<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1554,20 +1554,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>20.040<span style="color: #555; font-weight: bold;">μs</span>
+            <td>18.270<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>54.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>40.340<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>21.512<span style="color: #555; font-weight: bold;">μs</span>
+            <td>19.782<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #2d0000">
+            <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-18.22%</span>
+13.99%</span>
 
 </td>
-            <td>4.408<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.986<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1599,20 +1599,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.390<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.620<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.235<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.155<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #870000">
+            <td><span style="color: #960000">
     <span style="color: #555; font-weight: bold;">±</span>
-53.13%</span>
+59.16%</span>
 
 </td>
-            <td>0.136<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.098<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1644,20 +1644,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
     <tbody>
                     <tr>
             <td>benchSmallSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.120<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.800<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.210<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.330<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.145<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #680000">
+            <td><span style="color: #260000">
     <span style="color: #555; font-weight: bold;">±</span>
-41.11%</span>
+15.50%</span>
 
 </td>
-            <td>0.627<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.187<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1673,63 +1673,63 @@ Plotly.newPlot(document.getElementById('phpbench-component-263'), data, layout);
 <script>
 var data = [
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'FFIPreparedCallBench',
-        y: [1.6536790606653624],
+        y: [1.493365949119373],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'ClassCallBench',
-        y: [2.462035225048923],
+        y: [2.2269275929549917],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'FunctionUnrollCallBench',
-        y: [1.1065753424657532],
+        y: [0.7763209393346381],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'CExtensionCallBench',
-        y: [0.39121330724070447],
+        y: [0.3482778864970643],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'RustExtensionCallBench',
-        y: [0.8001174168297456],
+        y: [0.7264970645792563],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'FunctionCallBench',
-        y: [0.9737964774951082],
+        y: [0.8097455968688844],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'CExtensionSSECallBench',
-        y: [0.39340508806262237],
+        y: [0.33896281800391387],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'FFICallBench',
-        y: [22.354168297456006],
+        y: [20.503874755381567],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'CExtensionOptiCallBench',
-        y: [0.3974168297455968],
+        y: [0.342876712328767],
         type: 'bar',
             },
         {
-        x: ["benchMiddleSize-hello"],
+        x: ["benchMiddleSize"],
         name: 'FunctionFceCallBench',
-        y: [2.520058708414872],
+        y: [2.2799999999999994],
         type: 'bar',
             },
     ]
@@ -1737,12 +1737,12 @@ var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,2.2354168297456005,4.470833659491201,6.706250489236801,8.941667318982402,11.177084148728003,13.412500978473602,15.647917808219203,17.883334637964804,20.118751467710403,22.354168297456006],
-        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.235<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.471<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","6.706<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","8.942<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.177<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.413<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.648<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.883<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","20.119<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","22.354<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+        tickvals: [0,2.0503874755381566,4.100774951076313,6.151162426614469,8.201549902152626,10.251937377690783,12.302324853228939,14.352712328767096,16.403099804305253,18.453487279843408,20.503874755381567],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.050<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.101<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","6.151<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","8.202<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","10.252<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","12.302<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","14.353<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","16.403<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","18.453<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","20.504<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
-        tickvals: ["benchMiddleSize-hello"],
-        ticktext: ["benchMiddleSize-hello"],
+        tickvals: ["benchMiddleSize"],
+        ticktext: ["benchMiddleSize"],
     }
 };
 Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
@@ -1887,20 +1887,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.610<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.450<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.090<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.220<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.654<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.493<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #2d0000">
+            <td><span style="color: #280000">
     <span style="color: #555; font-weight: bold;">±</span>
-18.33%</span>
+16.37%</span>
 
 </td>
-            <td>0.327<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.257<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1932,20 +1932,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.380<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.160<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.860<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.860<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.462<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.227<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #4f0000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-31.33%</span>
+19.13%</span>
 
 </td>
-            <td>0.862<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.448<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1977,20 +1977,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.900<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.750<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.960<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.440<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.107<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.776<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #380000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-22.93%</span>
+19.72%</span>
 
 </td>
-            <td>0.267<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.158<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2022,20 +2022,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.550<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.940<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.391<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.348<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #720000">
+            <td><span style="color: #350000">
     <span style="color: #555; font-weight: bold;">±</span>
-45.55%</span>
+21.83%</span>
 
 </td>
-            <td>0.199<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.080<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2067,20 +2067,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.780<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.720<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>11.060<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.040<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.800<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.726<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #7a0000">
+            <td><span style="color: #3d0000">
     <span style="color: #555; font-weight: bold;">±</span>
-48.84%</span>
+24.90%</span>
 
 </td>
-            <td>0.441<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.192<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2112,20 +2112,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>0.680<span style="color: #555; font-weight: bold;">μs</span>
+</td>
+            <td>3.230<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td>0.810<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.460<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>0.974<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #440000">
+            <td><span style="color: #300000">
     <span style="color: #555; font-weight: bold;">±</span>
-27.38%</span>
+19.03%</span>
 
 </td>
-            <td>0.282<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.159<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2157,20 +2157,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.050<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.160<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.393<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.339<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #930000">
+            <td><span style="color: #3f0000">
     <span style="color: #555; font-weight: bold;">±</span>
-58.16%</span>
+25.34%</span>
 
 </td>
-            <td>0.254<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.091<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2202,20 +2202,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>20.890<span style="color: #555; font-weight: bold;">μs</span>
+            <td>19.180<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>53.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>39.680<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>22.354<span style="color: #555; font-weight: bold;">μs</span>
+            <td>20.504<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #2b0000">
+            <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-17.27%</span>
+13.76%</span>
 
 </td>
-            <td>4.280<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.033<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2247,20 +2247,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.397<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.343<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #7c0000">
+            <td><span style="color: #440000">
     <span style="color: #555; font-weight: bold;">±</span>
-49.01%</span>
+27.52%</span>
 
 </td>
-            <td>0.216<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2292,20 +2292,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
     <tbody>
                     <tr>
             <td>benchMiddleSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.430<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.220<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>10.100<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.600<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.280<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #3f0000">
+            <td><span style="color: #280000">
     <span style="color: #555; font-weight: bold;">±</span>
-25.04%</span>
+16.09%</span>
 
 </td>
-            <td>0.701<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.389<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2321,63 +2321,63 @@ Plotly.newPlot(document.getElementById('phpbench-component-356'), data, layout);
 <script>
 var data = [
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'FFIPreparedCallBench',
-        y: [2.8981213307240696],
+        y: [2.699275929549901],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'ClassCallBench',
-        y: [4.784324853228961],
+        y: [4.446947162426616],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'FunctionUnrollCallBench',
-        y: [2.3836594911937365],
+        y: [1.7059099804305284],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'CExtensionCallBench',
-        y: [0.7250684931506851],
+        y: [0.7102739726027395],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'RustExtensionCallBench',
-        y: [1.5030332681017613],
+        y: [1.4354794520547944],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'FunctionCallBench',
-        y: [2.085048923679059],
+        y: [1.809021526418787],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'CExtensionSSECallBench',
-        y: [0.7220547945205483],
+        y: [0.6989823874755386],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'FFICallBench',
-        y: [23.598532289628164],
+        y: [21.777005870841478],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'CExtensionOptiCallBench',
-        y: [0.7380234833659493],
+        y: [0.7107632093933465],
         type: 'bar',
             },
         {
-        x: ["benchBigSize-hello"],
+        x: ["benchBigSize"],
         name: 'FunctionFceCallBench',
-        y: [4.8661448140900205],
+        y: [4.489315068493156],
         type: 'bar',
             },
     ]
@@ -2385,12 +2385,12 @@ var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,2.3598532289628165,4.719706457925633,7.07955968688845,9.439412915851266,11.799266144814082,14.1591193737769,16.518972602739716,18.87882583170253,21.238679060665348,23.598532289628164],
-        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.360<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.720<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","7.080<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","9.439<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","11.799<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","14.159<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","16.519<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","18.879<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","21.239<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","23.599<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
+        tickvals: [0,2.1777005870841477,4.355401174168295,6.533101761252443,8.71080234833659,10.888502935420739,13.066203522504885,15.243904109589034,17.42160469667318,19.599305283757328,21.777005870841478],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","2.178<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","4.355<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","6.533<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","8.711<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","10.889<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.066<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","15.244<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","17.422<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","19.599<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","21.777<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
-        tickvals: ["benchBigSize-hello"],
-        ticktext: ["benchBigSize-hello"],
+        tickvals: ["benchBigSize"],
+        ticktext: ["benchBigSize"],
     }
 };
 Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
@@ -2535,20 +2535,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.630<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.540<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.170<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.898<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.699<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #1c0000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.01%</span>
+11.40%</span>
 
 </td>
-            <td>0.335<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.320<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2580,20 +2580,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.650<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.330<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>16.090<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.310<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.784<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.447<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #380000">
+            <td><span style="color: #230000">
     <span style="color: #555; font-weight: bold;">±</span>
-22.27%</span>
+14.63%</span>
 
 </td>
-            <td>1.167<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.687<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2625,20 +2625,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.870<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.670<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>17.310<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.340<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.384<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.706<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #470000">
+            <td><span style="color: #260000">
     <span style="color: #555; font-weight: bold;">±</span>
-28.62%</span>
+15.14%</span>
 
 </td>
-            <td>0.715<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.269<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2670,20 +2670,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.650<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>7.310<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.450<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.725<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.710<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #680000">
+            <td><span style="color: #350000">
     <span style="color: #555; font-weight: bold;">±</span>
-41.79%</span>
+21.94%</span>
 
 </td>
-            <td>0.337<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.164<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2715,20 +2715,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.460<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.390<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.790<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.710<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.503<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.435<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #5b0000">
+            <td><span style="color: #280000">
     <span style="color: #555; font-weight: bold;">±</span>
-36.41%</span>
+16.53%</span>
 
 </td>
-            <td>0.628<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.251<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2760,20 +2760,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.490<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.430<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.085<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.809<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #560000">
+            <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-34.07%</span>
+13.91%</span>
 
 </td>
-            <td>0.765<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.259<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2805,20 +2805,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.190<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.380<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.722<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.699<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #5e0000">
+            <td><span style="color: #3a0000">
     <span style="color: #555; font-weight: bold;">±</span>
-37.34%</span>
+23.09%</span>
 
 </td>
-            <td>0.300<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.171<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2850,20 +2850,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>21.910<span style="color: #555; font-weight: bold;">μs</span>
+            <td>20.360<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>45.230<span style="color: #555; font-weight: bold;">μs</span>
+            <td>39.930<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>23.599<span style="color: #555; font-weight: bold;">μs</span>
+            <td>21.777<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #260000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-15.07%</span>
+12.55%</span>
 
 </td>
-            <td>3.913<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.918<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2895,20 +2895,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>0.670<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.650<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>0.738<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.711<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #770000">
+            <td><span style="color: #3d0000">
     <span style="color: #555; font-weight: bold;">±</span>
-47.29%</span>
+24.50%</span>
 
 </td>
-            <td>0.383<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.184<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2940,20 +2940,20 @@ Plotly.newPlot(document.getElementById('phpbench-component-449'), data, layout);
     <tbody>
                     <tr>
             <td>benchBigSize</td>
-            <td>1.346<span style="color: #555; font-weight: bold;">mb</span>
+            <td>1.342<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.680<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.360<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>16.570<span style="color: #555; font-weight: bold;">μs</span>
+            <td>8.490<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.866<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.489<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #380000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-22.24%</span>
+12.51%</span>
 
 </td>
-            <td>1.202<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.590<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>

@@ -4335,10 +4335,10 @@ fi
 
 
 
-  php_c_pre='$(LIBTOOL) --mode=compile $(CC)'
+  php_c_pre='$(LIBTOOL) --tag=CC --mode=compile $(CC)'
   php_c_meta='$(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)'
   php_c_post=
-  php_cxx_pre='$(LIBTOOL) --mode=compile $(CXX)'
+  php_cxx_pre='$(LIBTOOL) --tag=CXX --mode=compile $(CXX)'
   php_cxx_meta='$(COMMON_FLAGS) $(CXXFLAGS_CLEAN) $(EXTRA_CXXFLAGS)'
   php_cxx_post=
   php_lo=lo
@@ -4348,10 +4348,10 @@ fi
     no)  pic_setting='-prefer-non-pic';;
   esac
 
-  shared_c_pre='$(LIBTOOL) --mode=compile $(CC)'
+  shared_c_pre='$(LIBTOOL) --tag=CC --mode=compile $(CC)'
   shared_c_meta='$(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) '$pic_setting
   shared_c_post=
-  shared_cxx_pre='$(LIBTOOL) --mode=compile $(CXX)'
+  shared_cxx_pre='$(LIBTOOL) --tag=CXX --mode=compile $(CXX)'
   shared_cxx_meta='$(COMMON_FLAGS) $(CXXFLAGS_CLEAN) $(EXTRA_CXXFLAGS) '$pic_setting
   shared_cxx_post=
   shared_lo=lo
@@ -4513,7 +4513,6 @@ if test "$PHP_COSINE_SIMILARITY_C" != "no"; then
 printf "%s\n" "#define HAVE_COSINE_SIMILARITY_C 1" >>confdefs.h
 
 
-
   ext_builddir=.
   ext_srcdir=$abs_srcdir
   ext_dir=""
@@ -4639,10 +4638,10 @@ EOF
 
   cat >>Makefile.objects<<EOF
 \$(phplibdir)/cosine_similarity_c.$suffix: $ext_builddir/cosine_similarity_c.$suffix
-	\$(LIBTOOL) --mode=install cp $ext_builddir/cosine_similarity_c.$suffix \$(phplibdir)
+	\$(LIBTOOL) --tag=CC --mode=install cp $ext_builddir/cosine_similarity_c.$suffix \$(phplibdir)
 
 $ext_builddir/cosine_similarity_c.$suffix: \$(shared_objects_cosine_similarity_c) \$(COSINE_SIMILARITY_C_SHARED_DEPENDENCIES)
-	\$(LIBTOOL) --mode=link \$(CC) -shared \$(COMMON_FLAGS) \$(CFLAGS_CLEAN) \$(EXTRA_CFLAGS) \$(LDFLAGS) $additional_flags -o \$@ -export-dynamic -avoid-version -prefer-pic -module -rpath \$(phplibdir) \$(EXTRA_LDFLAGS) \$(shared_objects_cosine_similarity_c) \$(COSINE_SIMILARITY_C_SHARED_LIBADD)
+	\$(LIBTOOL) --tag=CC --mode=link \$(CC) -shared \$(COMMON_FLAGS) \$(CFLAGS_CLEAN) \$(EXTRA_CFLAGS) \$(LDFLAGS) $additional_flags -o \$@ -export-dynamic -avoid-version -prefer-pic -module -rpath \$(phplibdir) \$(EXTRA_LDFLAGS) \$(shared_objects_cosine_similarity_c) \$(COSINE_SIMILARITY_C_SHARED_LIBADD)
 
 EOF
 
@@ -5345,7 +5344,7 @@ ia64-*-hpux*)
   ;;
 *-*-irix6*)
   # Find out which ABI we are using.
-  echo '#line 5348 "configure"' > conftest.$ac_ext
+  echo '#line 5347 "configure"' > conftest.$ac_ext
   if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$ac_compile\""; } >&5
   (eval $ac_compile) 2>&5
   ac_status=$?
@@ -6706,7 +6705,7 @@ else $as_nop
       LDFLAGS="$LDFLAGS -Wl,-exported_symbols_list,conftest.sym"
 
 cat > conftest.$ac_ext <<EOF
-#line 6709 "configure"
+#line 6708 "configure"
 #include "confdefs.h"
 int main() {
 ; return 0; }
@@ -6866,11 +6865,11 @@ else $as_nop
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"configure:6869: $lt_compile\"" >&5)
+   (eval echo "\"configure:6868: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "configure:6873: \$? = $ac_status" >&5
+   echo "configure:6872: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -7165,11 +7164,11 @@ else $as_nop
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"configure:7168: $lt_compile\"" >&5)
+   (eval echo "\"configure:7167: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "configure:7172: \$? = $ac_status" >&5
+   echo "configure:7171: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -7271,11 +7270,11 @@ else $as_nop
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"configure:7274: $lt_compile\"" >&5)
+   (eval echo "\"configure:7273: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "configure:7278: \$? = $ac_status" >&5
+   echo "configure:7277: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -7735,7 +7734,7 @@ _LT_EOF
        # Determine the default libpath from the value encoded in an empty executable.
 
 cat > conftest.$ac_ext <<EOF
-#line 7738 "configure"
+#line 7737 "configure"
 #include "confdefs.h"
 int main() {
 ; return 0; }
@@ -7777,7 +7776,7 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:/lib"; fi
 	 # Determine the default libpath from the value encoded in an empty executable.
 
 cat > conftest.$ac_ext <<EOF
-#line 7780 "configure"
+#line 7779 "configure"
 #include "confdefs.h"
 int main() {
 ; return 0; }
@@ -9310,7 +9309,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 9313 "configure"
+#line 9312 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -9408,7 +9407,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 9411 "configure"
+#line 9410 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -10473,7 +10472,7 @@ case $host_os in
       # Determine the default libpath from the value encoded in an empty executable.
 
 cat > conftest.$ac_ext <<EOF
-#line 10476 "configure"
+#line 10475 "configure"
 #include "confdefs.h"
 int main() {
 ; return 0; }
@@ -10516,7 +10515,7 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:/lib"; fi
 	# Determine the default libpath from the value encoded in an empty executable.
 
 cat > conftest.$ac_ext <<EOF
-#line 10519 "configure"
+#line 10518 "configure"
 #include "confdefs.h"
 int main() {
 ; return 0; }
@@ -11769,11 +11768,11 @@ else $as_nop
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"configure:11772: $lt_compile\"" >&5)
+   (eval echo "\"configure:11771: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "configure:11776: \$? = $ac_status" >&5
+   echo "configure:11775: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -11875,11 +11874,11 @@ else $as_nop
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"configure:11878: $lt_compile\"" >&5)
+   (eval echo "\"configure:11877: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "configure:11882: \$? = $ac_status" >&5
+   echo "configure:11881: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
