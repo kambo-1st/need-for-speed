@@ -29,12 +29,12 @@ build_rust_extension() {
 }
 
 # Checking if we're inside a Docker container
-if grep -q docker /proc/1/cgroup; then
+#if grep -q docker /proc/1/cgroup; then
     build_php_extension
     cd ..
     build_ffi_library
     cd ..
     build_rust_extension
-else
-    echo "This script is intended to be run inside a Docker container."
-fi
+#else
+#    echo "This script is intended to be run inside a Docker container."
+#fi
