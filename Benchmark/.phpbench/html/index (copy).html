@@ -15,128 +15,98 @@
                 <p>Cosine similarity call comparison</p>
                             <div id="phpbench-component-4" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173',
-    '#5254a3', '#6b6ecf', '#9c9ede', '#8ca252', '#b5cf6b'
-];
-
 var data = [
-    {
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FFIPreparedCallBench',
         y: [1.981741682974558,2.244207436399216,2.633679060665366],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBench',
         y: [1.039471624266145,1.1589628180039138,1.5171037181996083],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [1.7340313111545969,2.21168297455969,3.170587084148727],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'RustExtensionCallBench',
         y: [1.5110763209393356,1.8786692759295482,2.5946575342465783],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionFceCallBench',
         y: [2.603444227005873,3.4553816046966737,5.106144814090012],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
         y: [1.6976320939334615,2.1867123287671233,3.1270645792563614],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.2982387475538137,1.485753424657536,1.8624070450097827],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.250567514677095,4.483052837573384,4.953698630136987],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FFICallBench',
         y: [138.53005870841488,138.95581213307256,139.37890410958886],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionSSECallBench',
         y: [1.2860273972602732,1.4762818003913905,1.8439138943248532],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'ClassCallBench',
         y: [2.3949902152641886,3.2568688845401166,4.9191780821917845],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionCallBench',
         y: [1.291311154598825,1.4828767123287645,1.8536790606653617],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionCallDirectBench',
         y: [1.2564970645792544,1.39491193737769,1.681839530332681],
         type: 'bar',
-        marker: { color: colors[12] }
-    },
-]
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1 ,2,3,4,5],
-        ticktext: [
-        "0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.937890410958886,27.875780821917772,41.81367123287666,55.751561643835544,69.68945205479443,83.62734246575332,97.5652328767122,111.50312328767109,125.44101369862997,139.37890410958886],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.938<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.876<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.814<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.752<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.689<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.627<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.565<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.503<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.441<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.379<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
-        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
     }
 };
-
 Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 </script>
                     <div>
@@ -1347,127 +1317,98 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
                 <p>Cosine similarity call comparison</p>
                             <div id="phpbench-component-338" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173'
-];
-
 var data = [
-    {
+        {
         x: ["benchSmallSize-hello"],
         name: 'FFIPreparedCallBench',
         y: [1.981741682974558],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBench',
         y: [1.039471624266145],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [1.7340313111545969],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'RustExtensionCallBench',
         y: [1.5110763209393356],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionFceCallBench',
         y: [2.603444227005873],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
         y: [1.6976320939334615],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.2982387475538137],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.250567514677095],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FFICallBench',
         y: [138.53005870841488],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionSSECallBench',
         y: [1.2860273972602732],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'ClassCallBench',
         y: [2.3949902152641886],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionCallBench',
         y: [1.291311154598825],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionCallDirectBench',
         y: [1.2564970645792544],
         type: 'bar',
-        marker: { color: colors[12] }
-    },
-];
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.85300587084149,27.70601174168298,41.55901761252447,55.41202348336596,69.26502935420744,83.11803522504894,96.97104109589043,110.82404696673191,124.6770528375734,138.53005870841488],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.853<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.706<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.559<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.412<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.265<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.118<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","96.971<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","110.824<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","124.677<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","138.530<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchSmallSize-hello"],
-        ticktext: ["benchSmallSize"],
+        ticktext: ["benchSmallSize-hello"],
     }
 };
-
 Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
 </script>
                     <div>
@@ -2210,127 +2151,98 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                 <p>Cosine similarity call comparison</p>
                             <div id="phpbench-component-458" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173'
-];
-
 var data = [
-    {
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FFIPreparedCallBench',
         y: [2.244207436399216],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBench',
         y: [1.1589628180039138],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [2.21168297455969],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'RustExtensionCallBench',
         y: [1.8786692759295482],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionFceCallBench',
         y: [3.4553816046966737],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
         y: [2.1867123287671233],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.485753424657536],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.483052837573384],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FFICallBench',
         y: [138.95581213307256],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionSSECallBench',
         y: [1.4762818003913905],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'ClassCallBench',
         y: [3.2568688845401166],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionCallBench',
         y: [1.4828767123287645],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionCallDirectBench',
         y: [1.39491193737769],
         type: 'bar',
-        marker: { color: colors[12] }
-    },
-];
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.895581213307256,27.791162426614513,41.68674363992177,55.582324853229025,69.47790606653628,83.37348727984354,97.2690684931508,111.16464970645805,125.0602309197653,138.95581213307256],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.896<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.791<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.687<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.582<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.478<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.373<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.269<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.165<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.060<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","138.956<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchMiddleSize-hello"],
         ticktext: ["benchMiddleSize-hello"],
     }
 };
-
 Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
 </script>
                     <div>
@@ -3073,127 +2985,98 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                 <p>Cosine similarity call comparison</p>
                             <div id="phpbench-component-578" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173'
-];
-
 var data = [
-    {
+        {
         x: ["benchBigSize-hello"],
         name: 'FFIPreparedCallBench',
         y: [2.633679060665366],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBench',
         y: [1.5171037181996083],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [3.170587084148727],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'RustExtensionCallBench',
         y: [2.5946575342465783],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionFceCallBench',
         y: [5.106144814090012],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
         y: [3.1270645792563614],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.8624070450097827],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.953698630136987],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FFICallBench',
         y: [139.37890410958886],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionSSECallBench',
         y: [1.8439138943248532],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'ClassCallBench',
         y: [4.9191780821917845],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionCallBench',
         y: [1.8536790606653617],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionCallDirectBench',
         y: [1.681839530332681],
         type: 'bar',
-        marker: { color: colors[12] }
-    },
-];
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.937890410958886,27.875780821917772,41.81367123287666,55.751561643835544,69.68945205479443,83.62734246575332,97.5652328767122,111.50312328767109,125.44101369862997,139.37890410958886],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.938<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.876<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.814<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.752<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.689<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.627<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.565<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.503<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.441<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.379<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchBigSize-hello"],
-        ticktext: ["benchBigSize"],
+        ticktext: ["benchBigSize-hello"],
     }
 };
-
 Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
 </script>
                     <div>

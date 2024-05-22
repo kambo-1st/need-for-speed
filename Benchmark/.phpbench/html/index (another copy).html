@@ -37,13 +37,13 @@ var data = [
         type: 'bar',
         marker: { color: colors[1] }
     },
-    /*{
+    {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [1.7340313111545969,2.21168297455969,3.170587084148727],
         type: 'bar',
         marker: { color: colors[2] }
-    },*/
+    },
     {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'RustExtensionCallBench',
@@ -65,20 +65,20 @@ var data = [
         type: 'bar',
         marker: { color: colors[5] }
     },
-    /*{
+    {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.2982387475538137,1.485753424657536,1.8624070450097827],
         type: 'bar',
         marker: { color: colors[6] }
-    },*/
-    /*{
+    },
+    {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.250567514677095,4.483052837573384,4.953698630136987],
         type: 'bar',
         marker: { color: colors[7] }
-    },*/
+    },
     /*{
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FFICallBench',
@@ -119,21 +119,14 @@ var data = [
 var layout = {
     barmode: 'group',
     yaxis: {
-        tickmode: 'array',
-        tickvals: [0,1 ,2,3,4,5],
-        ticktext: [
-        "0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
+        tickmode: 'array'/*,
+        tickvals: [0,13.937890410958886,27.875780821917772,41.81367123287666,55.751561643835544,69.68945205479443,83.62734246575332,97.5652328767122,111.50312328767109,125.44101369862997,139.37890410958886],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.938<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.876<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.814<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.752<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.689<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.627<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.565<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.503<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.441<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.379<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]   */ 
     },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
-        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
     }
 };
 
@@ -1368,13 +1361,13 @@ var data = [
         type: 'bar',
         marker: { color: colors[1] }
     },
-    /*{
+    {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [1.7340313111545969],
         type: 'bar',
         marker: { color: colors[2] }
-    },*/
+    },
     {
         x: ["benchSmallSize-hello"],
         name: 'RustExtensionCallBench',
@@ -1396,20 +1389,20 @@ var data = [
         type: 'bar',
         marker: { color: colors[5] }
     },
-    /*{
+    {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.2982387475538137],
         type: 'bar',
         marker: { color: colors[6] }
-    },*/
-    /*{
+    },
+    {
         x: ["benchSmallSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.250567514677095],
         type: 'bar',
         marker: { color: colors[7] }
-    },*/
+    },
     /*{
         x: ["benchSmallSize-hello"],
         name: 'FFICallBench',
@@ -1450,21 +1443,14 @@ var data = [
 var layout = {
     barmode: 'group',
     yaxis: {
-        tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
+        tickmode: 'array'/*,
+        tickvals: [0,13.85300587084149,27.70601174168298,41.55901761252447,55.41202348336596,69.26502935420744,83.11803522504894,96.97104109589043,110.82404696673191,124.6770528375734,138.53005870841488],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.853<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.706<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.559<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.412<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.265<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.118<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","96.971<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","110.824<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","124.677<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","138.530<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    */
     },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchSmallSize-hello"],
-        ticktext: ["benchSmallSize"],
+        ticktext: ["benchSmallSize-hello"],
     }
 };
 
@@ -2231,13 +2217,13 @@ var data = [
         type: 'bar',
         marker: { color: colors[1] }
     },
-    /*{
+    {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [2.21168297455969],
         type: 'bar',
         marker: { color: colors[2] }
-    },*/
+    },
     {
         x: ["benchMiddleSize-hello"],
         name: 'RustExtensionCallBench',
@@ -2259,20 +2245,20 @@ var data = [
         type: 'bar',
         marker: { color: colors[5] }
     },
-    /*{
+    {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.485753424657536],
         type: 'bar',
         marker: { color: colors[6] }
-    },*/
-    /*{
+    },
+    {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.483052837573384],
         type: 'bar',
         marker: { color: colors[7] }
-    },*/
+    },
     /*{
         x: ["benchMiddleSize-hello"],
         name: 'FFICallBench',
@@ -2313,16 +2299,9 @@ var data = [
 var layout = {
     barmode: 'group',
     yaxis: {
-        tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
+        tickmode: 'array'/*,
+        tickvals: [0,13.895581213307256,27.791162426614513,41.68674363992177,55.582324853229025,69.47790606653628,83.37348727984354,97.2690684931508,111.16464970645805,125.0602309197653,138.95581213307256],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.896<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.791<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.687<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.582<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.478<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.373<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.269<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.165<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.060<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","138.956<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    */
     },
     xaxis: {
         tickmode: 'array',
@@ -3094,13 +3073,13 @@ var data = [
         type: 'bar',
         marker: { color: colors[1] }
     },
-    /*{
+    {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBenchNoJit',
         y: [3.170587084148727],
         type: 'bar',
         marker: { color: colors[2] }
-    },*/
+    },
     {
         x: ["benchBigSize-hello"],
         name: 'RustExtensionCallBench',
@@ -3122,20 +3101,20 @@ var data = [
         type: 'bar',
         marker: { color: colors[5] }
     },
-    /*{
+    {
         x: ["benchBigSize-hello"],
         name: 'CExtensionOptiCallBench',
         y: [1.8624070450097827],
         type: 'bar',
         marker: { color: colors[6] }
-    },*/
-    /*{
+    },
+    {
         x: ["benchBigSize-hello"],
         name: 'FunctionUnrollCallBench',
         y: [4.953698630136987],
         type: 'bar',
         marker: { color: colors[7] }
-    },*/
+    },
     /*{
         x: ["benchBigSize-hello"],
         name: 'FFICallBench',
@@ -3176,21 +3155,14 @@ var data = [
 var layout = {
     barmode: 'group',
     yaxis: {
-        tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
+        tickmode: 'array'/*,
+        tickvals: [0,13.937890410958886,27.875780821917772,41.81367123287666,55.751561643835544,69.68945205479443,83.62734246575332,97.5652328767122,111.50312328767109,125.44101369862997,139.37890410958886],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.938<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.876<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.814<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.752<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.689<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.627<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.565<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.503<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.441<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.379<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    */
     },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchBigSize-hello"],
-        ticktext: ["benchBigSize"],
+        ticktext: ["benchBigSize-hello"],
     }
 };
 

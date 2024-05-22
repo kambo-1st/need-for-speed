@@ -15,128 +15,92 @@
                 <p>Cosine similarity call comparison</p>
                             <div id="phpbench-component-4" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173',
-    '#5254a3', '#6b6ecf', '#9c9ede', '#8ca252', '#b5cf6b'
-];
-
 var data = [
-    {
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FFIPreparedCallBench',
-        y: [1.981741682974558,2.244207436399216,2.633679060665366],
+        y: [1.9573972602739722,2.225342465753426,2.613405088062622],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBench',
-        y: [1.039471624266145,1.1589628180039138,1.5171037181996083],
+        y: [1.0423287671232881,1.1499804305283758,1.5211937377690796],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBenchNoJit',
-        y: [1.7340313111545969,2.21168297455969,3.170587084148727],
+        y: [1.6419178082191785,2.124657534246574,3.073013698630139],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'RustExtensionCallBench',
-        y: [1.5110763209393356,1.8786692759295482,2.5946575342465783],
+        y: [1.4252054794520552,1.790332681017613,2.511487279843443],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionFceCallBench',
-        y: [2.603444227005873,3.4553816046966737,5.106144814090012],
+        y: [2.6006849315068536,3.4794324853228957,5.113268101761247],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
-        y: [1.6976320939334615,2.1867123287671233,3.1270645792563614],
+        y: [1.6027592954990209,2.0868297455968676,3.0419960861056734],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionOptiCallBench',
-        y: [1.2982387475538137,1.485753424657536,1.8624070450097827],
+        y: [1.1962622309197648,1.3880821917808215,1.7618395303326821],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FunctionUnrollCallBench',
-        y: [4.250567514677095,4.483052837573384,4.953698630136987],
+        y: [4.1789041095890385,4.409099804305283,4.863326810176117],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'FFICallBench',
-        y: [138.53005870841488,138.95581213307256,139.37890410958886],
+        y: [138.81816046966742,139.05620352250483,139.1947162426615],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionSSECallBench',
-        y: [1.2860273972602732,1.4762818003913905,1.8439138943248532],
+        y: [1.1988258317025426,1.3869863013698636,1.7551663405088058],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'ClassCallBench',
-        y: [2.3949902152641886,3.2568688845401166,4.9191780821917845],
+        y: [2.392230919765162,3.2513111545988287,4.918434442270062],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
         name: 'CExtensionCallBench',
-        y: [1.291311154598825,1.4828767123287645,1.8536790606653617],
+        y: [1.1883365949119353,1.377534246575342,1.7466731898238739],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
-        x: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
-        name: 'CExtensionCallDirectBench',
-        y: [1.2564970645792544,1.39491193737769,1.681839530332681],
-        type: 'bar',
-        marker: { color: colors[12] }
-    },
-]
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1 ,2,3,4,5],
-        ticktext: [
-        "0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-        "5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.919471624266151,27.838943248532303,41.758414872798454,55.677886497064605,69.59735812133076,83.51682974559691,97.43630136986306,111.35577299412921,125.27524461839536,139.1947162426615],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.919<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.839<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.758<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.678<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.597<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.517<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.436<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.356<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.275<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.195<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
-        ticktext: ["benchSmallSize","benchMiddleSize","benchBigSize"],
+        ticktext: ["benchSmallSize-hello","benchMiddleSize-hello","benchBigSize-hello"],
     }
 };
-
 Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 </script>
                     <div>
@@ -273,17 +237,6 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
                         >
                         CExtensionCallBench                    </button>
                 </li>
-                                            <li class="nav-item" role="presentation">
-                    <button 
-                        class="nav-link " 
-                        id="tab-button-phpbench-component-7-12" 
-                        data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-7-12" 
-                        aria-controls="#tab-content-phpbench-component-7-12" 
-                        aria-current="page" 
-                        >
-                        CExtensionCallDirectBench                    </button>
-                </li>
                                     </ul>
                 <div class="tab-content">
                   <div
@@ -314,36 +267,36 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.850<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.840<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.810<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.982<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.957<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1e0000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-12.29%</span>
+10.09%</span>
 
 </td>
-            <td>0.253<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.203<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.110<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.090<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.730<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.244<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.225<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.09%</span>
+9.18%</span>
 
 </td>
-            <td>0.257<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.209<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
@@ -352,16 +305,16 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 </td>
             <td>2.460<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.010<span style="color: #555; font-weight: bold;">μs</span>
+            <td>8.490<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.634<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.613<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.27%</span>
+9.83%</span>
 
 </td>
-            <td>0.279<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.264<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -397,16 +350,16 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 </td>
             <td>0.970<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.050<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.039<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.042<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #210000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-13.68%</span>
+9.39%</span>
 
 </td>
-            <td>0.148<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.101<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
@@ -415,34 +368,34 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 </td>
             <td>1.080<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.150<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.040<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.159<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-13.08%</span>
+13.26%</span>
 
 </td>
-            <td>0.156<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.157<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.440<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.430<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>11.290<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.090<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.517<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.521<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #210000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-13.71%</span>
+12.18%</span>
 
 </td>
-            <td>0.216<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.192<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -476,54 +429,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.590<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.520<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.790<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.750<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.734<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.642<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.38%</span>
+10.86%</span>
 
 </td>
-            <td>0.167<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.184<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.060<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.960<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.430<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.970<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.212<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.125<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.49%</span>
+8.49%</span>
 
 </td>
-            <td>0.241<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.185<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.970<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.900<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>13.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.171<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.073<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.67%</span>
+9.18%</span>
 
 </td>
-            <td>0.350<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.290<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -557,54 +510,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.380<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.320<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.320<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.880<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.511<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.425<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.69%</span>
+9.25%</span>
 
 </td>
-            <td>0.166<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.135<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.710<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.660<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.780<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.990<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.879<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.790<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.85%</span>
+9.81%</span>
 
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.181<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.340<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.370<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.595<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.511<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.08%</span>
+8.80%</span>
 
 </td>
-            <td>0.270<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.227<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -640,52 +593,52 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
 </td>
             <td>2.440<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>7.080<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.350<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.603<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.601<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.46%</span>
+8.97%</span>
 
 </td>
-            <td>0.309<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.239<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>3.260<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.250<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>10.940<span style="color: #555; font-weight: bold;">μs</span>
+            <td>32.560<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.455<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.479<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.43%</span>
+12.76%</span>
 
 </td>
-            <td>0.408<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.454<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.830<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>14.480<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.106<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.113<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.47%</span>
+10.21%</span>
 
 </td>
-            <td>0.605<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.537<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -719,54 +672,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.550<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.470<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.830<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.710<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.698<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.603<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.61%</span>
+9.72%</span>
 
 </td>
-            <td>0.168<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.161<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.010<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.950<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>20.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.990<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.187<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.087<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1e0000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-12.48%</span>
+8.83%</span>
 
 </td>
-            <td>0.280<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.189<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.930<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.860<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.230<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.510<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.127<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.042<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.14%</span>
+7.87%</span>
 
 </td>
-            <td>0.328<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.245<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -800,54 +753,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.150<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.180<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.620<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.298<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.196<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.12%</span>
+10.17%</span>
 
 </td>
-            <td>0.135<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.126<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.910<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.486<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.388<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.22%</span>
+9.10%</span>
 
 </td>
-            <td>0.156<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.130<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.710<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.470<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.862<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.762<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.57%</span>
+8.05%</span>
 
 </td>
-            <td>0.183<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.146<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -881,54 +834,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>3.960<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.920<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.600<span style="color: #555; font-weight: bold;">μs</span>
+            <td>8.820<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.251<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.179<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #140000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-8.66%</span>
+7.28%</span>
 
 </td>
-            <td>0.378<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.311<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>14.560<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.770<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.483<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.409<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.10%</span>
+7.91%</span>
 
 </td>
-            <td>0.419<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.358<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.550<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>23.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.480<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.954<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.863<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.36%</span>
+7.99%</span>
 
 </td>
-            <td>0.474<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.398<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -962,54 +915,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>133.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>133.880<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>366.260<span style="color: #555; font-weight: bold;">μs</span>
+            <td>260.050<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>138.530<span style="color: #555; font-weight: bold;">μs</span>
+            <td>138.818<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #140000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-8.87%</span>
+7.47%</span>
 
 </td>
-            <td>12.763<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.727<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>134.780<span style="color: #555; font-weight: bold;">μs</span>
+            <td>134.570<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>312.600<span style="color: #555; font-weight: bold;">μs</span>
+            <td>269.420<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>138.956<span style="color: #555; font-weight: bold;">μs</span>
+            <td>139.056<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #0f0000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-6.91%</span>
+7.47%</span>
 
 </td>
-            <td>9.913<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.766<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>135.560<span style="color: #555; font-weight: bold;">μs</span>
+            <td>134.700<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>274.950<span style="color: #555; font-weight: bold;">μs</span>
+            <td>262.300<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>139.379<span style="color: #555; font-weight: bold;">μs</span>
+            <td>139.195<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #0f0000">
     <span style="color: #555; font-weight: bold;">±</span>
-6.26%</span>
+6.80%</span>
 
 </td>
-            <td>8.996<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.798<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1043,54 +996,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.160<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.380<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.120<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.286<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.199<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.34%</span>
+9.19%</span>
 
 </td>
-            <td>0.136<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.113<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.330<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.270<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.580<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.810<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.476<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.387<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.31%</span>
+10.17%</span>
 
 </td>
-            <td>0.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.145<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.680<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.990<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.844<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.755<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.37%</span>
+8.67%</span>
 
 </td>
-            <td>0.176<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.156<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1124,54 +1077,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.240<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.250<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.395<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.392<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.75%</span>
+8.15%</span>
 
 </td>
-            <td>0.265<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.199<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>3.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.060<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>13.680<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.170<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.257<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.251<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.84%</span>
+9.37%</span>
 
 </td>
-            <td>0.363<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.312<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.630<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>14.120<span style="color: #555; font-weight: bold;">μs</span>
+            <td>13.300<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.919<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.918<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.49%</span>
+10.09%</span>
 
 </td>
-            <td>0.529<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.507<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1205,135 +1158,54 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.160<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.090<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.291<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #160000">
-    <span style="color: #555; font-weight: bold;">±</span>
-9.60%</span>
-
-</td>
-            <td>0.126<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-    </tr>
-                    <tr>
-            <td>benchMiddleSize</td>
-            <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
-</td>
-            <td>1.330<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>3.850<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>1.483<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #160000">
-    <span style="color: #555; font-weight: bold;">±</span>
-9.71%</span>
-
-</td>
-            <td>0.147<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-    </tr>
-                    <tr>
-            <td>benchBigSize</td>
-            <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
-</td>
-            <td>1.690<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>3.730<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>1.854<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.188<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-8.30%</span>
+8.96%</span>
 
 </td>
-            <td>0.157<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-    </tr>
-            </tbody>
-</table>
-          </div>
-                            <div
-              class="tab-pane " 
-              id="tab-content-phpbench-component-7-12" 
-              role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-7-12"
-          >
-<br/>
-              <table class="table table-striped table-bordered table-hover">
-            <caption>CExtensionCallDirectBench</caption>
-        <thead class="thead-light">
-        <tr>
-                                    <th colspan=7></th>
-                        </tr>
-        <tr>
-                            <th>variant</th>
-                            <th>memory</th>
-                            <th>min</th>
-                            <th>max</th>
-                            <th>mode</th>
-                            <th>rstdev</th>
-                            <th>stdev</th>
-                    </tr>
-    </thead>
-    <tbody>
-                    <tr>
-            <td>benchSmallSize</td>
-            <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
-</td>
-            <td>1.130<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>3.150<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>1.256<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #160000">
-    <span style="color: #555; font-weight: bold;">±</span>
-9.58%</span>
-
-</td>
-            <td>0.122<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.270<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.180<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.060<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.395<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.378<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.88%</span>
+8.22%</span>
 
 </td>
-            <td>0.141<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.116<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
                     <tr>
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.540<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>7.580<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.010<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.682<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.747<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.49%</span>
+7.89%</span>
 
 </td>
-            <td>0.162<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.142<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1345,140 +1217,105 @@ Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
     <div>
             <h2>Cosine similarity call comparison - small size</h2>
                 <p>Cosine similarity call comparison</p>
-                            <div id="phpbench-component-338" width="400" height="100"></div>
+                            <div id="phpbench-component-313" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173'
-];
-
 var data = [
-    {
+        {
         x: ["benchSmallSize-hello"],
         name: 'FFIPreparedCallBench',
-        y: [1.981741682974558],
+        y: [1.9573972602739722],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBench',
-        y: [1.039471624266145],
+        y: [1.0423287671232881],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBenchNoJit',
-        y: [1.7340313111545969],
+        y: [1.6419178082191785],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'RustExtensionCallBench',
-        y: [1.5110763209393356],
+        y: [1.4252054794520552],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionFceCallBench',
-        y: [2.603444227005873],
+        y: [2.6006849315068536],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
-        y: [1.6976320939334615],
+        y: [1.6027592954990209],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionOptiCallBench',
-        y: [1.2982387475538137],
+        y: [1.1962622309197648],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FunctionUnrollCallBench',
-        y: [4.250567514677095],
+        y: [4.1789041095890385],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'FFICallBench',
-        y: [138.53005870841488],
+        y: [138.81816046966742],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionSSECallBench',
-        y: [1.2860273972602732],
+        y: [1.1988258317025426],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'ClassCallBench',
-        y: [2.3949902152641886],
+        y: [2.392230919765162],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchSmallSize-hello"],
         name: 'CExtensionCallBench',
-        y: [1.291311154598825],
+        y: [1.1883365949119353],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
-        x: ["benchSmallSize-hello"],
-        name: 'CExtensionCallDirectBench',
-        y: [1.2564970645792544],
-        type: 'bar',
-        marker: { color: colors[12] }
-    },
-];
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.881816046966742,27.763632093933484,41.64544814090023,55.52726418786697,69.40908023483371,83.29089628180046,97.17271232876719,111.05452837573394,124.93634442270069,138.81816046966742],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.882<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.764<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.645<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.527<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.409<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.291<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.173<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.055<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","124.936<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","138.818<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchSmallSize-hello"],
-        ticktext: ["benchSmallSize"],
+        ticktext: ["benchSmallSize-hello"],
     }
 };
-
-Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
+Plotly.newPlot(document.getElementById('phpbench-component-313'), data, layout);
 </script>
                     <div>
-                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-339" role="tablist">
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-314" role="tablist">
                                         <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link active" 
-                        id="tab-button-phpbench-component-339-0" 
+                        id="tab-button-phpbench-component-314-0" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-0" 
-                        aria-controls="#tab-content-phpbench-component-339-0" 
+                        data-bs-target="#tab-content-phpbench-component-314-0" 
+                        aria-controls="#tab-content-phpbench-component-314-0" 
                         aria-current="page" 
                         >
                         FFIPreparedCallBench                    </button>
@@ -1486,10 +1323,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-1" 
+                        id="tab-button-phpbench-component-314-1" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-1" 
-                        aria-controls="#tab-content-phpbench-component-339-1" 
+                        data-bs-target="#tab-content-phpbench-component-314-1" 
+                        aria-controls="#tab-content-phpbench-component-314-1" 
                         aria-current="page" 
                         >
                         FunctionCallBench                    </button>
@@ -1497,10 +1334,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-2" 
+                        id="tab-button-phpbench-component-314-2" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-2" 
-                        aria-controls="#tab-content-phpbench-component-339-2" 
+                        data-bs-target="#tab-content-phpbench-component-314-2" 
+                        aria-controls="#tab-content-phpbench-component-314-2" 
                         aria-current="page" 
                         >
                         FunctionCallBenchNoJit                    </button>
@@ -1508,10 +1345,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-3" 
+                        id="tab-button-phpbench-component-314-3" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-3" 
-                        aria-controls="#tab-content-phpbench-component-339-3" 
+                        data-bs-target="#tab-content-phpbench-component-314-3" 
+                        aria-controls="#tab-content-phpbench-component-314-3" 
                         aria-current="page" 
                         >
                         RustExtensionCallBench                    </button>
@@ -1519,10 +1356,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-4" 
+                        id="tab-button-phpbench-component-314-4" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-4" 
-                        aria-controls="#tab-content-phpbench-component-339-4" 
+                        data-bs-target="#tab-content-phpbench-component-314-4" 
+                        aria-controls="#tab-content-phpbench-component-314-4" 
                         aria-current="page" 
                         >
                         FunctionFceCallBench                    </button>
@@ -1530,10 +1367,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-5" 
+                        id="tab-button-phpbench-component-314-5" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-5" 
-                        aria-controls="#tab-content-phpbench-component-339-5" 
+                        data-bs-target="#tab-content-phpbench-component-314-5" 
+                        aria-controls="#tab-content-phpbench-component-314-5" 
                         aria-current="page" 
                         >
                         FunctionCallBenchNoOpCache                    </button>
@@ -1541,10 +1378,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-6" 
+                        id="tab-button-phpbench-component-314-6" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-6" 
-                        aria-controls="#tab-content-phpbench-component-339-6" 
+                        data-bs-target="#tab-content-phpbench-component-314-6" 
+                        aria-controls="#tab-content-phpbench-component-314-6" 
                         aria-current="page" 
                         >
                         CExtensionOptiCallBench                    </button>
@@ -1552,10 +1389,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-7" 
+                        id="tab-button-phpbench-component-314-7" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-7" 
-                        aria-controls="#tab-content-phpbench-component-339-7" 
+                        data-bs-target="#tab-content-phpbench-component-314-7" 
+                        aria-controls="#tab-content-phpbench-component-314-7" 
                         aria-current="page" 
                         >
                         FunctionUnrollCallBench                    </button>
@@ -1563,10 +1400,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-8" 
+                        id="tab-button-phpbench-component-314-8" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-8" 
-                        aria-controls="#tab-content-phpbench-component-339-8" 
+                        data-bs-target="#tab-content-phpbench-component-314-8" 
+                        aria-controls="#tab-content-phpbench-component-314-8" 
                         aria-current="page" 
                         >
                         FFICallBench                    </button>
@@ -1574,10 +1411,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-9" 
+                        id="tab-button-phpbench-component-314-9" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-9" 
-                        aria-controls="#tab-content-phpbench-component-339-9" 
+                        data-bs-target="#tab-content-phpbench-component-314-9" 
+                        aria-controls="#tab-content-phpbench-component-314-9" 
                         aria-current="page" 
                         >
                         CExtensionSSECallBench                    </button>
@@ -1585,10 +1422,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-10" 
+                        id="tab-button-phpbench-component-314-10" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-10" 
-                        aria-controls="#tab-content-phpbench-component-339-10" 
+                        data-bs-target="#tab-content-phpbench-component-314-10" 
+                        aria-controls="#tab-content-phpbench-component-314-10" 
                         aria-current="page" 
                         >
                         ClassCallBench                    </button>
@@ -1596,32 +1433,21 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-339-11" 
+                        id="tab-button-phpbench-component-314-11" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-11" 
-                        aria-controls="#tab-content-phpbench-component-339-11" 
+                        data-bs-target="#tab-content-phpbench-component-314-11" 
+                        aria-controls="#tab-content-phpbench-component-314-11" 
                         aria-current="page" 
                         >
                         CExtensionCallBench                    </button>
-                </li>
-                                            <li class="nav-item" role="presentation">
-                    <button 
-                        class="nav-link " 
-                        id="tab-button-phpbench-component-339-12" 
-                        data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-339-12" 
-                        aria-controls="#tab-content-phpbench-component-339-12" 
-                        aria-current="page" 
-                        >
-                        CExtensionCallDirectBench                    </button>
                 </li>
                                     </ul>
                 <div class="tab-content">
                   <div
               class="tab-pane show active" 
-              id="tab-content-phpbench-component-339-0" 
+              id="tab-content-phpbench-component-314-0" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-0"
+              aria-labelledby="tab-button-phpbench-component-314-0"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1645,18 +1471,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.850<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.840<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.810<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.982<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.957<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1e0000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-12.29%</span>
+10.09%</span>
 
 </td>
-            <td>0.253<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.203<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1664,9 +1490,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-1" 
+              id="tab-content-phpbench-component-314-1" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-1"
+              aria-labelledby="tab-button-phpbench-component-314-1"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1692,16 +1518,16 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
 </td>
             <td>0.970<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.050<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.039<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.042<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #210000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-13.68%</span>
+9.39%</span>
 
 </td>
-            <td>0.148<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.101<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1709,9 +1535,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-2" 
+              id="tab-content-phpbench-component-314-2" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-2"
+              aria-labelledby="tab-button-phpbench-component-314-2"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1735,18 +1561,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.590<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.520<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.790<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.750<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.734<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.642<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.38%</span>
+10.86%</span>
 
 </td>
-            <td>0.167<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.184<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1754,9 +1580,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-3" 
+              id="tab-content-phpbench-component-314-3" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-3"
+              aria-labelledby="tab-button-phpbench-component-314-3"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1780,18 +1606,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.380<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.320<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.320<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.880<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.511<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.425<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.69%</span>
+9.25%</span>
 
 </td>
-            <td>0.166<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.135<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1799,9 +1625,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-4" 
+              id="tab-content-phpbench-component-314-4" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-4"
+              aria-labelledby="tab-button-phpbench-component-314-4"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1827,16 +1653,16 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
 </td>
             <td>2.440<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>7.080<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.350<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.603<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.601<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.46%</span>
+8.97%</span>
 
 </td>
-            <td>0.309<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.239<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1844,9 +1670,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-5" 
+              id="tab-content-phpbench-component-314-5" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-5"
+              aria-labelledby="tab-button-phpbench-component-314-5"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1870,18 +1696,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.550<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.470<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.830<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.710<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.698<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.603<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.61%</span>
+9.72%</span>
 
 </td>
-            <td>0.168<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.161<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1889,9 +1715,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-6" 
+              id="tab-content-phpbench-component-314-6" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-6"
+              aria-labelledby="tab-button-phpbench-component-314-6"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1915,18 +1741,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.150<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.180<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.620<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.298<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.196<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.12%</span>
+10.17%</span>
 
 </td>
-            <td>0.135<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.126<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1934,9 +1760,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-7" 
+              id="tab-content-phpbench-component-314-7" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-7"
+              aria-labelledby="tab-button-phpbench-component-314-7"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -1960,18 +1786,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>3.960<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.920<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.600<span style="color: #555; font-weight: bold;">μs</span>
+            <td>8.820<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.251<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.179<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #140000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-8.66%</span>
+7.28%</span>
 
 </td>
-            <td>0.378<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.311<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -1979,9 +1805,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-8" 
+              id="tab-content-phpbench-component-314-8" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-8"
+              aria-labelledby="tab-button-phpbench-component-314-8"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2005,18 +1831,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>133.520<span style="color: #555; font-weight: bold;">μs</span>
+            <td>133.880<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>366.260<span style="color: #555; font-weight: bold;">μs</span>
+            <td>260.050<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>138.530<span style="color: #555; font-weight: bold;">μs</span>
+            <td>138.818<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #140000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-8.87%</span>
+7.47%</span>
 
 </td>
-            <td>12.763<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.727<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2024,9 +1850,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-9" 
+              id="tab-content-phpbench-component-314-9" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-9"
+              aria-labelledby="tab-button-phpbench-component-314-9"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2050,18 +1876,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.160<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.380<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.120<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.286<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.199<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.34%</span>
+9.19%</span>
 
 </td>
-            <td>0.136<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.113<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2069,9 +1895,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-10" 
+              id="tab-content-phpbench-component-314-10" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-10"
+              aria-labelledby="tab-button-phpbench-component-314-10"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2095,18 +1921,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.240<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.250<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.395<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.392<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.75%</span>
+8.15%</span>
 
 </td>
-            <td>0.265<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.199<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2114,9 +1940,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-339-11" 
+              id="tab-content-phpbench-component-314-11" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-11"
+              aria-labelledby="tab-button-phpbench-component-314-11"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2140,63 +1966,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
             <td>benchSmallSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.160<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.090<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.100<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.291<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.188<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.60%</span>
+8.96%</span>
 
 </td>
-            <td>0.126<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-    </tr>
-            </tbody>
-</table>
-          </div>
-                            <div
-              class="tab-pane " 
-              id="tab-content-phpbench-component-339-12" 
-              role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-339-12"
-          >
-<br/>
-              <table class="table table-striped table-bordered table-hover">
-            <caption>CExtensionCallDirectBench</caption>
-        <thead class="thead-light">
-        <tr>
-                                    <th colspan=7></th>
-                        </tr>
-        <tr>
-                            <th>variant</th>
-                            <th>memory</th>
-                            <th>min</th>
-                            <th>max</th>
-                            <th>mode</th>
-                            <th>rstdev</th>
-                            <th>stdev</th>
-                    </tr>
-    </thead>
-    <tbody>
-                    <tr>
-            <td>benchSmallSize</td>
-            <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
-</td>
-            <td>1.130<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>3.150<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>1.256<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #160000">
-    <span style="color: #555; font-weight: bold;">±</span>
-9.58%</span>
-
-</td>
-            <td>0.122<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2208,140 +1989,105 @@ Plotly.newPlot(document.getElementById('phpbench-component-338'), data, layout);
     <div>
             <h2>Cosine similarity call comparison - middle size</h2>
                 <p>Cosine similarity call comparison</p>
-                            <div id="phpbench-component-458" width="400" height="100"></div>
+                            <div id="phpbench-component-424" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173'
-];
-
 var data = [
-    {
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FFIPreparedCallBench',
-        y: [2.244207436399216],
+        y: [2.225342465753426],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBench',
-        y: [1.1589628180039138],
+        y: [1.1499804305283758],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBenchNoJit',
-        y: [2.21168297455969],
+        y: [2.124657534246574],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'RustExtensionCallBench',
-        y: [1.8786692759295482],
+        y: [1.790332681017613],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionFceCallBench',
-        y: [3.4553816046966737],
+        y: [3.4794324853228957],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
-        y: [2.1867123287671233],
+        y: [2.0868297455968676],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionOptiCallBench',
-        y: [1.485753424657536],
+        y: [1.3880821917808215],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FunctionUnrollCallBench',
-        y: [4.483052837573384],
+        y: [4.409099804305283],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'FFICallBench',
-        y: [138.95581213307256],
+        y: [139.05620352250483],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionSSECallBench',
-        y: [1.4762818003913905],
+        y: [1.3869863013698636],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'ClassCallBench',
-        y: [3.2568688845401166],
+        y: [3.2513111545988287],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchMiddleSize-hello"],
         name: 'CExtensionCallBench',
-        y: [1.4828767123287645],
+        y: [1.377534246575342],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
-        x: ["benchMiddleSize-hello"],
-        name: 'CExtensionCallDirectBench',
-        y: [1.39491193737769],
-        type: 'bar',
-        marker: { color: colors[12] }
-    },
-];
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.905620352250484,27.811240704500968,41.716861056751455,55.622481409001935,69.52810176125242,83.43372211350291,97.33934246575339,111.24496281800387,125.15058317025435,139.05620352250483],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.906<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.811<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.717<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.622<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.528<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.434<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.339<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.245<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.151<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.056<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchMiddleSize-hello"],
         ticktext: ["benchMiddleSize-hello"],
     }
 };
-
-Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
+Plotly.newPlot(document.getElementById('phpbench-component-424'), data, layout);
 </script>
                     <div>
-                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-459" role="tablist">
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-425" role="tablist">
                                         <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link active" 
-                        id="tab-button-phpbench-component-459-0" 
+                        id="tab-button-phpbench-component-425-0" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-0" 
-                        aria-controls="#tab-content-phpbench-component-459-0" 
+                        data-bs-target="#tab-content-phpbench-component-425-0" 
+                        aria-controls="#tab-content-phpbench-component-425-0" 
                         aria-current="page" 
                         >
                         FFIPreparedCallBench                    </button>
@@ -2349,10 +2095,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-1" 
+                        id="tab-button-phpbench-component-425-1" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-1" 
-                        aria-controls="#tab-content-phpbench-component-459-1" 
+                        data-bs-target="#tab-content-phpbench-component-425-1" 
+                        aria-controls="#tab-content-phpbench-component-425-1" 
                         aria-current="page" 
                         >
                         FunctionCallBench                    </button>
@@ -2360,10 +2106,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-2" 
+                        id="tab-button-phpbench-component-425-2" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-2" 
-                        aria-controls="#tab-content-phpbench-component-459-2" 
+                        data-bs-target="#tab-content-phpbench-component-425-2" 
+                        aria-controls="#tab-content-phpbench-component-425-2" 
                         aria-current="page" 
                         >
                         FunctionCallBenchNoJit                    </button>
@@ -2371,10 +2117,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-3" 
+                        id="tab-button-phpbench-component-425-3" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-3" 
-                        aria-controls="#tab-content-phpbench-component-459-3" 
+                        data-bs-target="#tab-content-phpbench-component-425-3" 
+                        aria-controls="#tab-content-phpbench-component-425-3" 
                         aria-current="page" 
                         >
                         RustExtensionCallBench                    </button>
@@ -2382,10 +2128,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-4" 
+                        id="tab-button-phpbench-component-425-4" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-4" 
-                        aria-controls="#tab-content-phpbench-component-459-4" 
+                        data-bs-target="#tab-content-phpbench-component-425-4" 
+                        aria-controls="#tab-content-phpbench-component-425-4" 
                         aria-current="page" 
                         >
                         FunctionFceCallBench                    </button>
@@ -2393,10 +2139,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-5" 
+                        id="tab-button-phpbench-component-425-5" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-5" 
-                        aria-controls="#tab-content-phpbench-component-459-5" 
+                        data-bs-target="#tab-content-phpbench-component-425-5" 
+                        aria-controls="#tab-content-phpbench-component-425-5" 
                         aria-current="page" 
                         >
                         FunctionCallBenchNoOpCache                    </button>
@@ -2404,10 +2150,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-6" 
+                        id="tab-button-phpbench-component-425-6" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-6" 
-                        aria-controls="#tab-content-phpbench-component-459-6" 
+                        data-bs-target="#tab-content-phpbench-component-425-6" 
+                        aria-controls="#tab-content-phpbench-component-425-6" 
                         aria-current="page" 
                         >
                         CExtensionOptiCallBench                    </button>
@@ -2415,10 +2161,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-7" 
+                        id="tab-button-phpbench-component-425-7" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-7" 
-                        aria-controls="#tab-content-phpbench-component-459-7" 
+                        data-bs-target="#tab-content-phpbench-component-425-7" 
+                        aria-controls="#tab-content-phpbench-component-425-7" 
                         aria-current="page" 
                         >
                         FunctionUnrollCallBench                    </button>
@@ -2426,10 +2172,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-8" 
+                        id="tab-button-phpbench-component-425-8" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-8" 
-                        aria-controls="#tab-content-phpbench-component-459-8" 
+                        data-bs-target="#tab-content-phpbench-component-425-8" 
+                        aria-controls="#tab-content-phpbench-component-425-8" 
                         aria-current="page" 
                         >
                         FFICallBench                    </button>
@@ -2437,10 +2183,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-9" 
+                        id="tab-button-phpbench-component-425-9" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-9" 
-                        aria-controls="#tab-content-phpbench-component-459-9" 
+                        data-bs-target="#tab-content-phpbench-component-425-9" 
+                        aria-controls="#tab-content-phpbench-component-425-9" 
                         aria-current="page" 
                         >
                         CExtensionSSECallBench                    </button>
@@ -2448,10 +2194,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-10" 
+                        id="tab-button-phpbench-component-425-10" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-10" 
-                        aria-controls="#tab-content-phpbench-component-459-10" 
+                        data-bs-target="#tab-content-phpbench-component-425-10" 
+                        aria-controls="#tab-content-phpbench-component-425-10" 
                         aria-current="page" 
                         >
                         ClassCallBench                    </button>
@@ -2459,32 +2205,21 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-459-11" 
+                        id="tab-button-phpbench-component-425-11" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-11" 
-                        aria-controls="#tab-content-phpbench-component-459-11" 
+                        data-bs-target="#tab-content-phpbench-component-425-11" 
+                        aria-controls="#tab-content-phpbench-component-425-11" 
                         aria-current="page" 
                         >
                         CExtensionCallBench                    </button>
-                </li>
-                                            <li class="nav-item" role="presentation">
-                    <button 
-                        class="nav-link " 
-                        id="tab-button-phpbench-component-459-12" 
-                        data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-459-12" 
-                        aria-controls="#tab-content-phpbench-component-459-12" 
-                        aria-current="page" 
-                        >
-                        CExtensionCallDirectBench                    </button>
                 </li>
                                     </ul>
                 <div class="tab-content">
                   <div
               class="tab-pane show active" 
-              id="tab-content-phpbench-component-459-0" 
+              id="tab-content-phpbench-component-425-0" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-0"
+              aria-labelledby="tab-button-phpbench-component-425-0"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2508,18 +2243,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.110<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.090<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.730<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.410<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.244<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.225<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.09%</span>
+9.18%</span>
 
 </td>
-            <td>0.257<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.209<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2527,9 +2262,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-1" 
+              id="tab-content-phpbench-component-425-1" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-1"
+              aria-labelledby="tab-button-phpbench-component-425-1"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2555,16 +2290,16 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
 </td>
             <td>1.080<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>9.150<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.040<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.159<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #210000">
     <span style="color: #555; font-weight: bold;">±</span>
-13.08%</span>
+13.26%</span>
 
 </td>
-            <td>0.156<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.157<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2572,9 +2307,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-2" 
+              id="tab-content-phpbench-component-425-2" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-2"
+              aria-labelledby="tab-button-phpbench-component-425-2"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2598,18 +2333,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.060<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.960<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.430<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.970<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.212<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.125<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.49%</span>
+8.49%</span>
 
 </td>
-            <td>0.241<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.185<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2617,9 +2352,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-3" 
+              id="tab-content-phpbench-component-425-3" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-3"
+              aria-labelledby="tab-button-phpbench-component-425-3"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2643,18 +2378,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.710<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.660<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.780<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.990<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.879<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.790<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.85%</span>
+9.81%</span>
 
 </td>
-            <td>0.210<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.181<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2662,9 +2397,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-4" 
+              id="tab-content-phpbench-component-425-4" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-4"
+              aria-labelledby="tab-button-phpbench-component-425-4"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2688,18 +2423,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>3.260<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.250<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>10.940<span style="color: #555; font-weight: bold;">μs</span>
+            <td>32.560<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.455<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.479<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.43%</span>
+12.76%</span>
 
 </td>
-            <td>0.408<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.454<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2707,9 +2442,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-5" 
+              id="tab-content-phpbench-component-425-5" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-5"
+              aria-labelledby="tab-button-phpbench-component-425-5"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2733,18 +2468,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.010<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.950<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>20.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.990<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.187<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.087<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1e0000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-12.48%</span>
+8.83%</span>
 
 </td>
-            <td>0.280<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.189<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2752,9 +2487,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-6" 
+              id="tab-content-phpbench-component-425-6" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-6"
+              aria-labelledby="tab-button-phpbench-component-425-6"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2778,18 +2513,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.360<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.910<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.486<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.388<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.22%</span>
+9.10%</span>
 
 </td>
-            <td>0.156<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.130<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2797,9 +2532,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-7" 
+              id="tab-content-phpbench-component-425-7" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-7"
+              aria-labelledby="tab-button-phpbench-component-425-7"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2823,18 +2558,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>14.560<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.770<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.483<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.409<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.10%</span>
+7.91%</span>
 
 </td>
-            <td>0.419<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.358<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2842,9 +2577,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-8" 
+              id="tab-content-phpbench-component-425-8" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-8"
+              aria-labelledby="tab-button-phpbench-component-425-8"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2868,18 +2603,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>134.780<span style="color: #555; font-weight: bold;">μs</span>
+            <td>134.570<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>312.600<span style="color: #555; font-weight: bold;">μs</span>
+            <td>269.420<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>138.956<span style="color: #555; font-weight: bold;">μs</span>
+            <td>139.056<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #0f0000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-6.91%</span>
+7.47%</span>
 
 </td>
-            <td>9.913<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.766<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2887,9 +2622,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-9" 
+              id="tab-content-phpbench-component-425-9" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-9"
+              aria-labelledby="tab-button-phpbench-component-425-9"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2913,18 +2648,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.330<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.270<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.580<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.810<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.476<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.387<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.31%</span>
+10.17%</span>
 
 </td>
-            <td>0.140<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.145<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2932,9 +2667,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-10" 
+              id="tab-content-phpbench-component-425-10" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-10"
+              aria-labelledby="tab-button-phpbench-component-425-10"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -2958,18 +2693,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>3.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.060<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>13.680<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.170<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.257<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.251<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.84%</span>
+9.37%</span>
 
 </td>
-            <td>0.363<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.312<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -2977,9 +2712,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-459-11" 
+              id="tab-content-phpbench-component-425-11" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-11"
+              aria-labelledby="tab-button-phpbench-component-425-11"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3003,63 +2738,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
             <td>benchMiddleSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.330<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.280<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.850<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.060<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.483<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.378<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.71%</span>
+8.22%</span>
 
 </td>
-            <td>0.147<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-    </tr>
-            </tbody>
-</table>
-          </div>
-                            <div
-              class="tab-pane " 
-              id="tab-content-phpbench-component-459-12" 
-              role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-459-12"
-          >
-<br/>
-              <table class="table table-striped table-bordered table-hover">
-            <caption>CExtensionCallDirectBench</caption>
-        <thead class="thead-light">
-        <tr>
-                                    <th colspan=7></th>
-                        </tr>
-        <tr>
-                            <th>variant</th>
-                            <th>memory</th>
-                            <th>min</th>
-                            <th>max</th>
-                            <th>mode</th>
-                            <th>rstdev</th>
-                            <th>stdev</th>
-                    </tr>
-    </thead>
-    <tbody>
-                    <tr>
-            <td>benchMiddleSize</td>
-            <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
-</td>
-            <td>1.270<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>6.180<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>1.395<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #160000">
-    <span style="color: #555; font-weight: bold;">±</span>
-9.88%</span>
-
-</td>
-            <td>0.141<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.116<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3071,140 +2761,105 @@ Plotly.newPlot(document.getElementById('phpbench-component-458'), data, layout);
     <div>
             <h2>Cosine similarity call comparison - big size</h2>
                 <p>Cosine similarity call comparison</p>
-                            <div id="phpbench-component-578" width="400" height="100"></div>
+                            <div id="phpbench-component-535" width="400" height="100"></div>
 <script>
-var colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
-    '#393b79', '#637939', '#8c6d31', '#843c39', '#7b4173'
-];
-
 var data = [
-    {
+        {
         x: ["benchBigSize-hello"],
         name: 'FFIPreparedCallBench',
-        y: [2.633679060665366],
+        y: [2.613405088062622],
         type: 'bar',
-        marker: { color: colors[0] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBench',
-        y: [1.5171037181996083],
+        y: [1.5211937377690796],
         type: 'bar',
-        marker: { color: colors[1] }
-    },
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBenchNoJit',
-        y: [3.170587084148727],
+        y: [3.073013698630139],
         type: 'bar',
-        marker: { color: colors[2] }
-    },*/
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'RustExtensionCallBench',
-        y: [2.5946575342465783],
+        y: [2.511487279843443],
         type: 'bar',
-        marker: { color: colors[3] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionFceCallBench',
-        y: [5.106144814090012],
+        y: [5.113268101761247],
         type: 'bar',
-        marker: { color: colors[4] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionCallBenchNoOpCache',
-        y: [3.1270645792563614],
+        y: [3.0419960861056734],
         type: 'bar',
-        marker: { color: colors[5] }
-    },
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionOptiCallBench',
-        y: [1.8624070450097827],
+        y: [1.7618395303326821],
         type: 'bar',
-        marker: { color: colors[6] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FunctionUnrollCallBench',
-        y: [4.953698630136987],
+        y: [4.863326810176117],
         type: 'bar',
-        marker: { color: colors[7] }
-    },*/
-    /*{
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'FFICallBench',
-        y: [139.37890410958886],
+        y: [139.1947162426615],
         type: 'bar',
-        marker: { color: colors[8] }
-    },*/
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionSSECallBench',
-        y: [1.8439138943248532],
+        y: [1.7551663405088058],
         type: 'bar',
-        marker: { color: colors[9] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'ClassCallBench',
-        y: [4.9191780821917845],
+        y: [4.918434442270062],
         type: 'bar',
-        marker: { color: colors[10] }
-    },
-    {
+            },
+        {
         x: ["benchBigSize-hello"],
         name: 'CExtensionCallBench',
-        y: [1.8536790606653617],
+        y: [1.7466731898238739],
         type: 'bar',
-        marker: { color: colors[11] }
-    },
-    {
-        x: ["benchBigSize-hello"],
-        name: 'CExtensionCallDirectBench',
-        y: [1.681839530332681],
-        type: 'bar',
-        marker: { color: colors[12] }
-    },
-];
-
+            },
+    ]
 var layout = {
     barmode: 'group',
     yaxis: {
         tickmode: 'array',
-        tickvals: [0,1,2,3,4,5],
-        ticktext: [
-		"0.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"1.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"2.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"3.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"4.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n",
-		"5.0<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"
-        ]
-    },
+        tickvals: [0,13.919471624266151,27.838943248532303,41.758414872798454,55.677886497064605,69.59735812133076,83.51682974559691,97.43630136986306,111.35577299412921,125.27524461839536,139.1947162426615],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","13.919<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","27.839<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","41.758<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","55.678<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","69.597<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","83.517<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","97.436<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","111.356<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","125.275<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","139.195<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n"]    },
     xaxis: {
         tickmode: 'array',
         tickvals: ["benchBigSize-hello"],
-        ticktext: ["benchBigSize"],
+        ticktext: ["benchBigSize-hello"],
     }
 };
-
-Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
+Plotly.newPlot(document.getElementById('phpbench-component-535'), data, layout);
 </script>
                     <div>
-                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-579" role="tablist">
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-536" role="tablist">
                                         <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link active" 
-                        id="tab-button-phpbench-component-579-0" 
+                        id="tab-button-phpbench-component-536-0" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-0" 
-                        aria-controls="#tab-content-phpbench-component-579-0" 
+                        data-bs-target="#tab-content-phpbench-component-536-0" 
+                        aria-controls="#tab-content-phpbench-component-536-0" 
                         aria-current="page" 
                         >
                         FFIPreparedCallBench                    </button>
@@ -3212,10 +2867,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-1" 
+                        id="tab-button-phpbench-component-536-1" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-1" 
-                        aria-controls="#tab-content-phpbench-component-579-1" 
+                        data-bs-target="#tab-content-phpbench-component-536-1" 
+                        aria-controls="#tab-content-phpbench-component-536-1" 
                         aria-current="page" 
                         >
                         FunctionCallBench                    </button>
@@ -3223,10 +2878,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-2" 
+                        id="tab-button-phpbench-component-536-2" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-2" 
-                        aria-controls="#tab-content-phpbench-component-579-2" 
+                        data-bs-target="#tab-content-phpbench-component-536-2" 
+                        aria-controls="#tab-content-phpbench-component-536-2" 
                         aria-current="page" 
                         >
                         FunctionCallBenchNoJit                    </button>
@@ -3234,10 +2889,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-3" 
+                        id="tab-button-phpbench-component-536-3" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-3" 
-                        aria-controls="#tab-content-phpbench-component-579-3" 
+                        data-bs-target="#tab-content-phpbench-component-536-3" 
+                        aria-controls="#tab-content-phpbench-component-536-3" 
                         aria-current="page" 
                         >
                         RustExtensionCallBench                    </button>
@@ -3245,10 +2900,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-4" 
+                        id="tab-button-phpbench-component-536-4" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-4" 
-                        aria-controls="#tab-content-phpbench-component-579-4" 
+                        data-bs-target="#tab-content-phpbench-component-536-4" 
+                        aria-controls="#tab-content-phpbench-component-536-4" 
                         aria-current="page" 
                         >
                         FunctionFceCallBench                    </button>
@@ -3256,10 +2911,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-5" 
+                        id="tab-button-phpbench-component-536-5" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-5" 
-                        aria-controls="#tab-content-phpbench-component-579-5" 
+                        data-bs-target="#tab-content-phpbench-component-536-5" 
+                        aria-controls="#tab-content-phpbench-component-536-5" 
                         aria-current="page" 
                         >
                         FunctionCallBenchNoOpCache                    </button>
@@ -3267,10 +2922,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-6" 
+                        id="tab-button-phpbench-component-536-6" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-6" 
-                        aria-controls="#tab-content-phpbench-component-579-6" 
+                        data-bs-target="#tab-content-phpbench-component-536-6" 
+                        aria-controls="#tab-content-phpbench-component-536-6" 
                         aria-current="page" 
                         >
                         CExtensionOptiCallBench                    </button>
@@ -3278,10 +2933,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-7" 
+                        id="tab-button-phpbench-component-536-7" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-7" 
-                        aria-controls="#tab-content-phpbench-component-579-7" 
+                        data-bs-target="#tab-content-phpbench-component-536-7" 
+                        aria-controls="#tab-content-phpbench-component-536-7" 
                         aria-current="page" 
                         >
                         FunctionUnrollCallBench                    </button>
@@ -3289,10 +2944,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-8" 
+                        id="tab-button-phpbench-component-536-8" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-8" 
-                        aria-controls="#tab-content-phpbench-component-579-8" 
+                        data-bs-target="#tab-content-phpbench-component-536-8" 
+                        aria-controls="#tab-content-phpbench-component-536-8" 
                         aria-current="page" 
                         >
                         FFICallBench                    </button>
@@ -3300,10 +2955,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-9" 
+                        id="tab-button-phpbench-component-536-9" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-9" 
-                        aria-controls="#tab-content-phpbench-component-579-9" 
+                        data-bs-target="#tab-content-phpbench-component-536-9" 
+                        aria-controls="#tab-content-phpbench-component-536-9" 
                         aria-current="page" 
                         >
                         CExtensionSSECallBench                    </button>
@@ -3311,10 +2966,10 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-10" 
+                        id="tab-button-phpbench-component-536-10" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-10" 
-                        aria-controls="#tab-content-phpbench-component-579-10" 
+                        data-bs-target="#tab-content-phpbench-component-536-10" 
+                        aria-controls="#tab-content-phpbench-component-536-10" 
                         aria-current="page" 
                         >
                         ClassCallBench                    </button>
@@ -3322,32 +2977,21 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
                                             <li class="nav-item" role="presentation">
                     <button 
                         class="nav-link " 
-                        id="tab-button-phpbench-component-579-11" 
+                        id="tab-button-phpbench-component-536-11" 
                         data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-11" 
-                        aria-controls="#tab-content-phpbench-component-579-11" 
+                        data-bs-target="#tab-content-phpbench-component-536-11" 
+                        aria-controls="#tab-content-phpbench-component-536-11" 
                         aria-current="page" 
                         >
                         CExtensionCallBench                    </button>
-                </li>
-                                            <li class="nav-item" role="presentation">
-                    <button 
-                        class="nav-link " 
-                        id="tab-button-phpbench-component-579-12" 
-                        data-bs-toggle="tab" 
-                        data-bs-target="#tab-content-phpbench-component-579-12" 
-                        aria-controls="#tab-content-phpbench-component-579-12" 
-                        aria-current="page" 
-                        >
-                        CExtensionCallDirectBench                    </button>
                 </li>
                                     </ul>
                 <div class="tab-content">
                   <div
               class="tab-pane show active" 
-              id="tab-content-phpbench-component-579-0" 
+              id="tab-content-phpbench-component-536-0" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-0"
+              aria-labelledby="tab-button-phpbench-component-536-0"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3373,16 +3017,16 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
 </td>
             <td>2.460<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>6.010<span style="color: #555; font-weight: bold;">μs</span>
+            <td>8.490<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.634<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.613<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.27%</span>
+9.83%</span>
 
 </td>
-            <td>0.279<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.264<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3390,9 +3034,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-1" 
+              id="tab-content-phpbench-component-536-1" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-1"
+              aria-labelledby="tab-button-phpbench-component-536-1"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3416,18 +3060,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.440<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.430<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>11.290<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.090<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.517<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.521<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #210000">
+            <td><span style="color: #1e0000">
     <span style="color: #555; font-weight: bold;">±</span>
-13.71%</span>
+12.18%</span>
 
 </td>
-            <td>0.216<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.192<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3435,9 +3079,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-2" 
+              id="tab-content-phpbench-component-536-2" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-2"
+              aria-labelledby="tab-button-phpbench-component-536-2"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3461,18 +3105,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.970<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.900<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>13.220<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.110<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.171<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.073<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #160000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.67%</span>
+9.18%</span>
 
 </td>
-            <td>0.350<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.290<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3480,9 +3124,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-3" 
+              id="tab-content-phpbench-component-536-3" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-3"
+              aria-labelledby="tab-button-phpbench-component-536-3"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3506,18 +3150,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.340<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.370<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.150<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>2.595<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.511<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.08%</span>
+8.80%</span>
 
 </td>
-            <td>0.270<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.227<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3525,9 +3169,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-4" 
+              id="tab-content-phpbench-component-536-4" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-4"
+              aria-labelledby="tab-button-phpbench-component-536-4"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3551,18 +3195,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.830<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>12.840<span style="color: #555; font-weight: bold;">μs</span>
+            <td>14.480<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>5.106<span style="color: #555; font-weight: bold;">μs</span>
+            <td>5.113<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #1c0000">
+            <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-11.47%</span>
+10.21%</span>
 
 </td>
-            <td>0.605<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.537<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3570,9 +3214,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-5" 
+              id="tab-content-phpbench-component-536-5" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-5"
+              aria-labelledby="tab-button-phpbench-component-536-5"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3596,18 +3240,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>2.930<span style="color: #555; font-weight: bold;">μs</span>
+            <td>2.860<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.230<span style="color: #555; font-weight: bold;">μs</span>
+            <td>7.510<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.127<span style="color: #555; font-weight: bold;">μs</span>
+            <td>3.042<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #190000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.14%</span>
+7.87%</span>
 
 </td>
-            <td>0.328<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.245<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3615,9 +3259,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-6" 
+              id="tab-content-phpbench-component-536-6" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-6"
+              aria-labelledby="tab-button-phpbench-component-536-6"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3641,18 +3285,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.710<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.070<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.470<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.862<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.762<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.57%</span>
+8.05%</span>
 
 </td>
-            <td>0.183<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.146<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3660,9 +3304,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-7" 
+              id="tab-content-phpbench-component-536-7" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-7"
+              aria-labelledby="tab-button-phpbench-component-536-7"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3686,18 +3330,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.550<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>23.420<span style="color: #555; font-weight: bold;">μs</span>
+            <td>10.480<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.954<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.863<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.36%</span>
+7.99%</span>
 
 </td>
-            <td>0.474<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.398<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3705,9 +3349,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-8" 
+              id="tab-content-phpbench-component-536-8" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-8"
+              aria-labelledby="tab-button-phpbench-component-536-8"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3731,18 +3375,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>135.560<span style="color: #555; font-weight: bold;">μs</span>
+            <td>134.700<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>274.950<span style="color: #555; font-weight: bold;">μs</span>
+            <td>262.300<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>139.379<span style="color: #555; font-weight: bold;">μs</span>
+            <td>139.195<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #0f0000">
     <span style="color: #555; font-weight: bold;">±</span>
-6.26%</span>
+6.80%</span>
 
 </td>
-            <td>8.996<span style="color: #555; font-weight: bold;">μs</span>
+            <td>9.798<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3750,9 +3394,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-9" 
+              id="tab-content-phpbench-component-536-9" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-9"
+              aria-labelledby="tab-button-phpbench-component-536-9"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3776,18 +3420,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.680<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>8.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>6.990<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.844<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.755<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #160000">
+            <td><span style="color: #140000">
     <span style="color: #555; font-weight: bold;">±</span>
-9.37%</span>
+8.67%</span>
 
 </td>
-            <td>0.176<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.156<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3795,9 +3439,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-10" 
+              id="tab-content-phpbench-component-536-10" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-10"
+              aria-labelledby="tab-button-phpbench-component-536-10"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3821,18 +3465,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>4.660<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.630<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>14.120<span style="color: #555; font-weight: bold;">μs</span>
+            <td>13.300<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>4.919<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.918<span style="color: #555; font-weight: bold;">μs</span>
 </td>
             <td><span style="color: #190000">
     <span style="color: #555; font-weight: bold;">±</span>
-10.49%</span>
+10.09%</span>
 
 </td>
-            <td>0.529<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.507<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>
@@ -3840,9 +3484,9 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
           </div>
                             <div
               class="tab-pane " 
-              id="tab-content-phpbench-component-579-11" 
+              id="tab-content-phpbench-component-536-11" 
               role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-11"
+              aria-labelledby="tab-button-phpbench-component-536-11"
           >
 <br/>
               <table class="table table-striped table-bordered table-hover">
@@ -3866,63 +3510,18 @@ Plotly.newPlot(document.getElementById('phpbench-component-578'), data, layout);
             <td>benchBigSize</td>
             <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
 </td>
-            <td>1.690<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.640<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>3.730<span style="color: #555; font-weight: bold;">μs</span>
+            <td>4.010<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td>1.854<span style="color: #555; font-weight: bold;">μs</span>
+            <td>1.747<span style="color: #555; font-weight: bold;">μs</span>
 </td>
-            <td><span style="color: #140000">
+            <td><span style="color: #110000">
     <span style="color: #555; font-weight: bold;">±</span>
-8.30%</span>
+7.89%</span>
 
 </td>
-            <td>0.157<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-    </tr>
-            </tbody>
-</table>
-          </div>
-                            <div
-              class="tab-pane " 
-              id="tab-content-phpbench-component-579-12" 
-              role="tabpanel" 
-              aria-labelledby="tab-button-phpbench-component-579-12"
-          >
-<br/>
-              <table class="table table-striped table-bordered table-hover">
-            <caption>CExtensionCallDirectBench</caption>
-        <thead class="thead-light">
-        <tr>
-                                    <th colspan=7></th>
-                        </tr>
-        <tr>
-                            <th>variant</th>
-                            <th>memory</th>
-                            <th>min</th>
-                            <th>max</th>
-                            <th>mode</th>
-                            <th>rstdev</th>
-                            <th>stdev</th>
-                    </tr>
-    </thead>
-    <tbody>
-                    <tr>
-            <td>benchBigSize</td>
-            <td>1.384<span style="color: #555; font-weight: bold;">mb</span>
-</td>
-            <td>1.540<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>7.580<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td>1.682<span style="color: #555; font-weight: bold;">μs</span>
-</td>
-            <td><span style="color: #160000">
-    <span style="color: #555; font-weight: bold;">±</span>
-9.49%</span>
-
-</td>
-            <td>0.162<span style="color: #555; font-weight: bold;">μs</span>
+            <td>0.142<span style="color: #555; font-weight: bold;">μs</span>
 </td>
     </tr>
             </tbody>

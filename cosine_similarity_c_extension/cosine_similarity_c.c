@@ -210,6 +210,54 @@ PHP_FUNCTION(cosine_similarity_c) {
     RETURN_DOUBLE(result);
 }
 
+PHP_FUNCTION(cosine_similarity_c_direct) {
+    zval *array1, *array2;
+    int size1, size2, i;
+    double result;
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "aa", &array1, &array2) == FAILURE) {
+        return;
+    }
+
+    size1 = zend_array_count(Z_ARRVAL_P(array1));
+    size2 = zend_array_count(Z_ARRVAL_P(array2));
+
+    // Ensure arrays are of the same size
+    if (size1 != size2) {
+        php_error_docref(NULL, E_WARNING, "Arrays must be of the same size");
+        RETURN_FALSE;
+    }
+
+    HashTable *arr_hash1 = Z_ARRVAL_P(array1);
+    HashTable *arr_hash2 = Z_ARRVAL_P(array2);
+    zval *val1, *val2;
+
+    double dot_product = 0.0;
+    double magnitude_a = 0.0;
+    double magnitude_b = 0.0;
+
+    for (i = 0; i < size1; i++) {
+        val1 = zend_hash_index_find(arr_hash1, i);
+        val2 = zend_hash_index_find(arr_hash2, i);
+        if (val1 && val2) {
+            double elem1 = zval_get_double(val1);
+            double elem2 = zval_get_double(val2);
+            dot_product += elem1 * elem2;
+            magnitude_a += elem1 * elem1;
+            magnitude_b += elem2 * elem2;
+        } else {
+            php_error_docref(NULL, E_WARNING, "Arrays must be of the same size");
+            RETURN_FALSE;
+        }
+    }
+
+    result = dot_product / (sqrt(magnitude_a) * sqrt(magnitude_b));
+
+    RETURN_DOUBLE(result);
+}
+
+
+
 PHP_FUNCTION(cosine_similarity_c_sse) {
     zval *array1, *array2;
     double *arr1, *arr2;
