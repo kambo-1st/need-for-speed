@@ -239,16 +239,11 @@ PHP_FUNCTION(cosine_similarity_c_direct) {
     for (i = 0; i < size1; i++) {
         val1 = zend_hash_index_find(arr_hash1, i);
         val2 = zend_hash_index_find(arr_hash2, i);
-        if (val1 && val2) {
-            double elem1 = zval_get_double(val1);
-            double elem2 = zval_get_double(val2);
-            dot_product += elem1 * elem2;
-            magnitude_a += elem1 * elem1;
-            magnitude_b += elem2 * elem2;
-        } else {
-            php_error_docref(NULL, E_WARNING, "Arrays must be of the same size");
-            RETURN_FALSE;
-        }
+        double elem1 = zval_get_double(val1);
+        double elem2 = zval_get_double(val2);
+        dot_product += elem1 * elem2;
+        magnitude_a += elem1 * elem1;
+        magnitude_b += elem2 * elem2;
     }
 
     result = dot_product / (sqrt(magnitude_a) * sqrt(magnitude_b));
